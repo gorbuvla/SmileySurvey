@@ -20,6 +20,7 @@
 		C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */; };
 		C206D7DC23788A45007D59D3 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DB23788A45007D59D3 /* Survey.swift */; };
 		C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */; };
+		C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositoring.swift; sourceTree = "<group>"; };
 		C206D7DB23788A45007D59D3 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSurveyRepository.swift; sourceTree = "<group>"; };
+		C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				C206D7D2237889BD007D59D3 /* SurveyListView.swift */,
 				C206D7D4237889D2007D59D3 /* SurveyListViewModel.swift */,
+				C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,
+				C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */,
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C206D7D3237889BD007D59D3 /* SurveyListView.swift in Sources */,
@@ -493,14 +497,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P88J5J9T9W;
-				INFOPLIST_FILE = SmileSurveyTests/Info.plist;
+				INFOPLIST_FILE = SmileySurveyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.gorbuvla.SmileSurveyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gorbuvla.SmileySurveyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,14 +519,14 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P88J5J9T9W;
-				INFOPLIST_FILE = SmileSurveyTests/Info.plist;
+				INFOPLIST_FILE = SmileySurveyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.gorbuvla.SmileSurveyTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gorbuvla.SmileySurveyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

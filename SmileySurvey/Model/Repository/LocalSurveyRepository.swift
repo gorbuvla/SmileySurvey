@@ -13,7 +13,7 @@ final class MockedSurveyRepository: SurveyRepositoring {
     
     func observeSurveys() -> AnyPublisher<[Survey], Never> {
         let surveys = (1...10).map { number in
-            Survey(id: "\(number)", name: "Survey \(number) 🤔")
+            Survey(id: "\(number)", name: "Survey \(number) 🤔", question: "vbn")
         }
         return Just(surveys)
             //.delay(for: 2.0, scheduler: DispatchQueue.global())
