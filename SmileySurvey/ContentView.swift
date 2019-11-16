@@ -10,9 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            SurveyListView()
-        }
+        ModalTest()
+            .frame(width: 330, height: 200, alignment: .center)
+        
     }
 }
 

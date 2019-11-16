@@ -1,0 +1,4 @@
+osx_image: xcode11.2
+language: objective-c
+xcode_project: SmileySurvey.xcodeproj
+xcode_scheme: SmileySurveyTests

@@ -17,6 +17,7 @@ struct SurveyItemView: View {
             Image("img_statistics_placeholder")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .frame(width: 330, height: 200, alignment: .center)
             
             VStack {
                 Text(survey.name)
@@ -32,9 +33,11 @@ struct SurveyItemView: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
             }.padding()
-            
-        }.cornerRadius(10)
+        }.cornerRadius(30)
             .padding([.horizontal])
+            .background(Color.white)
+            .clipped()
+            .shadow(radius: 5)
     }
 }
 

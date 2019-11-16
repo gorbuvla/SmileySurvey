@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SmileSurvey
+@testable import SmileySurvey
 
 class SmileSurveyTests: XCTestCase {
 
