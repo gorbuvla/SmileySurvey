@@ -10,9 +10,7 @@ import SwiftUI
 
 struct SurveyDetailModal: View {
     
-    let survey = Survey(
-        id: "id", name: "Questionarie", question: "How was your meal?"
-    )
+    let survey: Survey
     
     var body: some View {
         VStack {
@@ -36,6 +34,10 @@ struct SurveyDetailModal: View {
 
 struct SurveyDetailModal_Previews: PreviewProvider {
     static var previews: some View {
-        SurveyDetailModal()
+        let survey = Survey(
+            id: "id", name: "Questionarie", question: "How was your meal?"
+        )
+        
+        return SurveyDetailModal(survey: survey)
     }
 }

@@ -37,7 +37,7 @@ struct ModalTest: View {
                         self.isPresenting = false
                         //self.sourceRect = proxy.frame(in: .global)
                     }) {
-                        SurveyDetailModal()
+                        SurveyDetailModal(survey: self.survey)
                     }
                     
                     .frame(

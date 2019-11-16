@@ -18,10 +18,14 @@ struct SurveyListView: View {
     @ObservedObject var viewModel = SurveyListViewModel(repository: repository)
     
     var body: some View {
+        NavigationView {
         // TODO: handle empty state as well
-        List(viewModel.surveys, id: \.id) { survey in
-            SurveyListRow(survey: survey)
-        }.background(Color.blue)
+            List(viewModel.surveys, id: \.id) { survey in
+                NavigationLink(destination: SurveyDetailModal(survey: survey)) {
+                    SurveyListRow(survey: survey)
+                }
+            }.navigationBarTitle("Surveys") // TODO: resources
+        }
     }
 }
 
@@ -30,10 +34,25 @@ struct SurveyListRow: View {
     let survey: Survey
     
     var body: some View {
-        VStack {
+        HStack {
+            DonutChart(data: survey.chartData)
+                .frame(width: 70, height: 70)
             Text(survey.name)
-            Text("😎🧛‍♂️😛")
-        }.background(Color.red)
+        }
+    }
+}
+
+extension Survey {
+    // TODO: revisit colors once swiftgen is set up
+    var chartData: [(Int, Color)] {
+        get {
+            [
+                (disaster, Color.red),
+                (bad, Color.yellow),
+                (good, Color.blue),
+                (excellent, Color.green)
+            ]
+        }
     }
 }
 
