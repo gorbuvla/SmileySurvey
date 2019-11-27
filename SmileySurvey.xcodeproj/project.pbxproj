@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,9 @@
 		C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */; };
 		C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E063238097EB00F59D1A /* DonutChartSegment.swift */; };
 		C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E0652380A31C00F59D1A /* DonutChart.swift */; };
+		C21D3D82238F06DA00D1B220 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = C21D3D81238F06DA00D1B220 /* Grid */; };
+		C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D83238F071400D1B220 /* SurveyGridView.swift */; };
+		C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
 		C24B08B8238088350062AD81 /* SurveyDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B7238088350062AD81 /* SurveyDetailModal.swift */; };
 		C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */; };
@@ -57,6 +60,8 @@
 		C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSurveyRepository.swift; sourceTree = "<group>"; };
 		C207E063238097EB00F59D1A /* DonutChartSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChartSegment.swift; sourceTree = "<group>"; };
 		C207E0652380A31C00F59D1A /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
+		C21D3D83238F071400D1B220 /* SurveyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridView.swift; sourceTree = "<group>"; };
+		C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridItemView.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
 		C24B08B7238088350062AD81 /* SurveyDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailModal.swift; sourceTree = "<group>"; };
 		C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C21D3D82238F06DA00D1B220 /* Grid in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +164,8 @@
 				C206D7D2237889BD007D59D3 /* SurveyListView.swift */,
 				C206D7D4237889D2007D59D3 /* SurveyListViewModel.swift */,
 				C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */,
+				C21D3D83238F071400D1B220 /* SurveyGridView.swift */,
+				C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -244,6 +252,9 @@
 			dependencies = (
 			);
 			name = SmileySurvey;
+			packageProductDependencies = (
+				C21D3D81238F06DA00D1B220 /* Grid */,
+			);
 			productName = SmileSurvey;
 			productReference = C206D7A6237888BE007D59D3 /* SmileySurvey.app */;
 			productType = "com.apple.product-type.application";
@@ -294,6 +305,9 @@
 				Base,
 			);
 			mainGroup = C206D79D237888BE007D59D3;
+			packageReferences = (
+				C21D3D80238F06DA00D1B220 /* XCRemoteSwiftPackageReference "Grid" */,
+			);
 			productRefGroup = C206D7A7237888BE007D59D3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C206D7D5237889D2007D59D3 /* SurveyListViewModel.swift in Sources */,
+				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
@@ -341,6 +356,7 @@
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */,
+				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
 				C206D7D3237889BD007D59D3 /* SurveyListView.swift in Sources */,
 				C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */,
 			);
@@ -605,6 +621,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C21D3D80238F06DA00D1B220 /* XCRemoteSwiftPackageReference "Grid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIExtensions/Grid.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C21D3D81238F06DA00D1B220 /* Grid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C21D3D80238F06DA00D1B220 /* XCRemoteSwiftPackageReference "Grid" */;
+			productName = Grid;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */ = {

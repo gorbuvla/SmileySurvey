@@ -5,9 +5,10 @@
 //  Created by Vlad Gorbunov on 10/11/2019.
 //  Copyright © 2019 Vlad Gorbunov. All rights reserved.
 //
+import Foundation
 
-struct Survey {
-    let id: String
+struct Survey: Identifiable {
+    let id = UUID()
     let name: String
     let question: String
     var excellent: Int = 0

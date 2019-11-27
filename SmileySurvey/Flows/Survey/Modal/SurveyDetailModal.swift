@@ -35,7 +35,7 @@ struct SurveyDetailModal: View {
 struct SurveyDetailModal_Previews: PreviewProvider {
     static var previews: some View {
         let survey = Survey(
-            id: "id", name: "Questionarie", question: "How was your meal?"
+            name: "Questionarie", question: "How was your meal?"
         )
         
         return SurveyDetailModal(survey: survey)

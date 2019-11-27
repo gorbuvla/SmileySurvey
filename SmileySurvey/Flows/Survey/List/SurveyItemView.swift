@@ -14,10 +14,8 @@ struct SurveyItemView: View {
     
     var body: some View {
         VStack {
-            Image("img_statistics_placeholder")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 330, height: 200, alignment: .center)
+            DonutChart(data: survey.chartData)
+                .frame(width: 70, height: 70)
             
             VStack {
                 Text(survey.name)
@@ -38,13 +36,14 @@ struct SurveyItemView: View {
             .background(Color.white)
             .clipped()
             .shadow(radius: 5)
+            .aspectRatio(0.5, contentMode: .fit)
     }
 }
 
 struct SurveyItemView_Previews: PreviewProvider {
     static var previews: some View {
         let survey = Survey(
-            id: "id", name: "Questionarie", question: "How was your meal?"
+            name: "Questionarie", question: "How was your meal?"
         )
         
         return SurveyItemView(survey: survey)

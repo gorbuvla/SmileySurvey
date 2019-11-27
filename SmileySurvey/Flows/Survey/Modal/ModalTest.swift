@@ -15,7 +15,7 @@ struct ModalTest: View {
     @State var sourceRect: CGRect? = nil
     
     let survey = Survey(
-        id: "id", name: "Questionarie", question: "How was your meal?"
+        name: "Questionarie", question: "How was your meal?"
     )
     
     var body: some View {

@@ -14,7 +14,7 @@ struct ContentView: View {
 //            .frame(width: 330, height: 200, alignment: .center)
         
         
-            SurveyListView()
+            SurveyGridView()
         
     }
 }
