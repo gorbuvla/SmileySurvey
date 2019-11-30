@@ -25,6 +25,8 @@
 		C21D3D82238F06DA00D1B220 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = C21D3D81238F06DA00D1B220 /* Grid */; };
 		C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D83238F071400D1B220 /* SurveyGridView.swift */; };
 		C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */; };
+		C21D3D8923929A0A00D1B220 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */; };
+		C21D3D8B23929BD800D1B220 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D8A23929BD800D1B220 /* LoadingView.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
 		C24B08B8238088350062AD81 /* SurveyDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B7238088350062AD81 /* SurveyDetailModal.swift */; };
 		C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */; };
@@ -62,6 +64,8 @@
 		C207E0652380A31C00F59D1A /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
 		C21D3D83238F071400D1B220 /* SurveyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridView.swift; sourceTree = "<group>"; };
 		C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridItemView.swift; sourceTree = "<group>"; };
+		C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		C21D3D8A23929BD800D1B220 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
 		C24B08B7238088350062AD81 /* SurveyDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailModal.swift; sourceTree = "<group>"; };
 		C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		C207E0612380976A00F59D1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C21D3D87239299B100D1B220 /* ActivityIndicator */,
 				C207E0622380977200F59D1A /* Chart */,
 			);
 			path = Views;
@@ -225,6 +230,15 @@
 				C207E0652380A31C00F59D1A /* DonutChart.swift */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		C21D3D87239299B100D1B220 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */,
+				C21D3D8A23929BD800D1B220 /* LoadingView.swift */,
+			);
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		C24B08B4238085CB0062AD81 /* Modal */ = {
@@ -359,6 +373,8 @@
 				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
 				C206D7D3237889BD007D59D3 /* SurveyListView.swift in Sources */,
 				C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */,
+				C21D3D8923929A0A00D1B220 /* ActivityIndicator.swift in Sources */,
+				C21D3D8B23929BD800D1B220 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
