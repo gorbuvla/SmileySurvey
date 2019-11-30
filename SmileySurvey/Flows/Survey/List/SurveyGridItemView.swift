@@ -27,11 +27,11 @@ struct SurveyGridItemView: View {
                 
                     Text(survey.question)
                         .font(.title)
-                        .fontWeight(.black)
+                        .fontWeight(.heavy)
                         .foregroundColor(.primary)
                     
                     Text("Number of corrspondents: \(survey.totalCorrespondents)".uppercased())
-                        .font(.caption)
+                        .font(.system(size: 10))
                         .foregroundColor(.secondary)
                         .aspectRatio(contentMode: .fit)
                 }.padding()
