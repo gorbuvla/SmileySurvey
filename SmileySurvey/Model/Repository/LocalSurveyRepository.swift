@@ -15,8 +15,7 @@ final class MockedSurveyRepository: SurveyRepositoring {
         let surveys = (1...10).map { number in
             Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
         }
-        return Just(surveys)
-            //.delay(for: 2.0, scheduler: DispatchQueue.global())
-            .eraseToAnyPublisher()
+        
+        return Just(surveys).eraseToAnyPublisher()
     }
 }

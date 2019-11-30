@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LoadingView<Content: View>: View {
     
+    let label: String = "Loading..."
+    
     @Binding var isLoading: Bool
     var content: () -> Content
     
@@ -19,6 +21,16 @@ struct LoadingView<Content: View>: View {
                 self.content()
                     .disabled(self.isLoading)
                     .blur(radius: self.isLoading ? 3 : 0)
+                
+                VStack {
+                    Text(self.label)
+                    ActivityIndicator(isAnimating: .constant(true), style: .large)
+                }
+                .frame(width: geometry.size.width / 2, height: geometry.size.height / 4)
+                .background(Color.secondary.colorInvert())
+                .foregroundColor(Color.primary)
+                .cornerRadius(20)
+                .opacity(self.isLoading ? 1 : 0)
             }
         }
     }
@@ -26,6 +38,8 @@ struct LoadingView<Content: View>: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView()
+        LoadingView(isLoading: .constant(true)) {
+            Text("Hola")
+        }
     }
 }

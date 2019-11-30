@@ -9,68 +9,57 @@
 import SwiftUI
 import Grid
 
-struct Item: Identifiable {
-    let id = UUID()
-    let number: Int
-    let color: Color = .random
-}
-
-extension Color {
-    private static let all: [Color] = [.red, .green, .blue, .orange, .yellow, .pink, .purple]
-    
-    static var random: Color {
-        all.randomElement()!
-    }
-}
-
-// TODO - get rid of these once DI is figured out
-fileprivate let repository = MockedSurveyRepository()
-
 struct SurveyGridView: View {
-    @State var items: [Item] = (0...100).map { Item(number: $0) }
     
-    @ObservedObject var viewModel = SurveyListViewModel(repository: repository)
+    private let kTracksCount = Tracks.count(4)
+    
+    @State private var showsAddNewSurvey: Bool = false
+    @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     var body: some View {
-        NavigationView {
-            Grid(viewModel.surveys) { survey in
-                SurveyGridItemView(survey: survey)
+        LoadingView(isLoading: $viewModel.loading) {
+            NavigationView {
+                self.listContent
+                    .navigationBarTitle("Surveys", displayMode: .inline)
+                    .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
             }
-            .gridStyle(
-                StaggeredGridStyle(tracks: 5)
-            )
-            .navigationBarTitle("Surveys", displayMode: .inline)
-            .navigationBarItems(leading:
-                Button(action: {}) {
-                    Image(systemName: "gear")
-                }
-            )
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(
-            StackNavigationViewStyle()
-        )
     }
-}
 
-struct Card: View {
-    let title: String
-    let color: Color
-    
-    var body: some View {
-        ZStack(alignment: .init(horizontal: .center, vertical: .center)) {
-            Rectangle()
-                .foregroundColor(color)
-            Text(title)
-                .font(.title)
-                .foregroundColor(.white)
-                .opacity(0.5)
+    private var listContent: some View {
+        get {
+            if viewModel.surveys.isEmpty {
+                return AnyView(Text("No surveys yet"))
+            } else {
+                return AnyView(
+                    Grid(self.viewModel.surveys) { survey in
+                        SurveyGridItemView(survey: survey)
+                    }
+                    .gridStyle(StaggeredGridStyle(tracks: self.kTracksCount))
+                )
+            }
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .strokeBorder(Color.white.opacity(0.3), lineWidth: 4)
-        )
-        .cornerRadius(16)
-            .aspectRatio(0.5, contentMode: .fit)
+    }
+    
+    private var trailingNavItem: some View {
+        get {
+            Button(action: { self.showsAddNewSurvey = true }) {
+                Image(systemName: "plus.circle")
+            }
+            .alert(isPresented: $showsAddNewSurvey) {
+                // TODO: present new survey form
+                Alert(title: Text("Add new survey"), message: Text("!!!"), dismissButton: .default(Text("ADD")))
+            }
+        }
+    }
+    
+    private var leadingNavItem: some View {
+        get {
+             Button(action: { self.viewModel.reload() }) {
+                Image(systemName: "arrow.clockwise.circle")
+            }
+        }
     }
 }
 

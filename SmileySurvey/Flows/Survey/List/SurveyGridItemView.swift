@@ -39,10 +39,10 @@ struct SurveyGridItemView: View {
         }
         .overlay(
             RoundedRectangle(cornerRadius: 16)
-                .strokeBorder(Color.green.opacity(0.3), lineWidth: 4)
+                .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
         .cornerRadius(16)
-            .aspectRatio(0.5, contentMode: .fit)
+            .aspectRatio(0.75, contentMode: .fit)
     }
 }
 
@@ -52,5 +52,27 @@ struct SurveyGridItemView_Previews: PreviewProvider {
             name: "Questionarie", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100
         )
         return SurveyGridItemView(survey: survey).frame(width: 200, height: 300, alignment: .center)
+    }
+}
+
+extension Survey {
+    // TODO: revisit colors once swiftgen is set up
+    var chartData: [(Int, Color)] {
+        get {
+            [
+                (disaster, Color.red),
+                (bad, Color.yellow),
+                (good, Color.blue),
+                (excellent, Color.green)
+            ]
+        }
+    }
+}
+
+extension Color {
+    private static let all: [Color] = [.red, .green, .blue, .orange, .yellow, .pink, .purple]
+    
+    static var random: Color {
+        all.randomElement()!
     }
 }

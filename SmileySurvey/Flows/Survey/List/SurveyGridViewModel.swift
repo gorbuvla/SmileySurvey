@@ -9,23 +9,35 @@
 import Foundation
 import Combine
 
-// TODO: figure out BaseViewModel with cancellables to reduce boilerplate
-final class SurveyListViewModel: ObservableObject {
+final class SurveyGridViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     private let repository: SurveyRepositoring
     
     @Published var surveys: [Survey] = []
+    @Published var loading: Bool = true
+    @Published var error: Error? = nil
     
     init(repository: SurveyRepositoring) {
         self.repository = repository
         bindUpdates()
     }
     
+    func reload() {
+        surveys = (1...20).map { number in
+            Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
+        }
+    }
+    
     private func bindUpdates() {
         repository.observeSurveys()
             .subscribe(on: DispatchQueue.global())
-            .sink(receiveValue: { [weak self] surveys in self?.surveys = surveys })
+            .receive(on: DispatchQueue.main)
+            .delay(for: 2.0, scheduler: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] surveys in
+                self?.loading = false
+                self?.surveys = surveys
+            })
             .store(in: &cancellables)
     }
 }

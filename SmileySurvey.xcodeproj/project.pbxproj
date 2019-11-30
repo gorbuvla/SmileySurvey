@@ -15,8 +15,7 @@
 		C206D7B6237888C3007D59D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */; };
 		C206D7B9237888C3007D59D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */; };
 		C206D7C4237888C3007D59D3 /* SmileSurveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7C3237888C3007D59D3 /* SmileSurveyTests.swift */; };
-		C206D7D3237889BD007D59D3 /* SurveyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7D2237889BD007D59D3 /* SurveyListView.swift */; };
-		C206D7D5237889D2007D59D3 /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7D4237889D2007D59D3 /* SurveyListViewModel.swift */; };
+		C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7D4237889D2007D59D3 /* SurveyGridViewModel.swift */; };
 		C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */; };
 		C206D7DC23788A45007D59D3 /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DB23788A45007D59D3 /* Survey.swift */; };
 		C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */; };
@@ -27,9 +26,11 @@
 		C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */; };
 		C21D3D8923929A0A00D1B220 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */; };
 		C21D3D8B23929BD800D1B220 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D8A23929BD800D1B220 /* LoadingView.swift */; };
+		C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */; };
+		C2246A202392C9B1008C3C60 /* ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */; };
+		C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A222392D0D5008C3C60 /* ModelDependency.swift */; };
+		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
-		C24B08B8238088350062AD81 /* SurveyDetailModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B7238088350062AD81 /* SurveyDetailModal.swift */; };
-		C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,7 @@
 		C206D7BF237888C3007D59D3 /* SmileySurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmileySurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206D7C3237888C3007D59D3 /* SmileSurveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileSurveyTests.swift; sourceTree = "<group>"; };
 		C206D7C5237888C3007D59D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C206D7D2237889BD007D59D3 /* SurveyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListView.swift; sourceTree = "<group>"; };
-		C206D7D4237889D2007D59D3 /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		C206D7D4237889D2007D59D3 /* SurveyGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridViewModel.swift; sourceTree = "<group>"; };
 		C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyRepositoring.swift; sourceTree = "<group>"; };
 		C206D7DB23788A45007D59D3 /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSurveyRepository.swift; sourceTree = "<group>"; };
@@ -66,9 +66,11 @@
 		C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridItemView.swift; sourceTree = "<group>"; };
 		C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		C21D3D8A23929BD800D1B220 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModalDetail.swift; sourceTree = "<group>"; };
+		C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentable.swift; sourceTree = "<group>"; };
+		C2246A222392D0D5008C3C60 /* ModelDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependency.swift; sourceTree = "<group>"; };
+		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
-		C24B08B7238088350062AD81 /* SurveyDetailModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailModal.swift; sourceTree = "<group>"; };
-		C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		C206D7A8237888BE007D59D3 /* SmileySurvey */ = {
 			isa = PBXGroup;
 			children = (
+				C2246A212392D09D008C3C60 /* DI */,
 				C207E0612380976A00F59D1A /* Views */,
 				C206D7D6237889EB007D59D3 /* Model */,
 				C206D7CE23788969007D59D3 /* Flows */,
@@ -165,9 +168,7 @@
 		C206D7D023788992007D59D3 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				C206D7D2237889BD007D59D3 /* SurveyListView.swift */,
-				C206D7D4237889D2007D59D3 /* SurveyListViewModel.swift */,
-				C2A96EEA237B66E8002A4E26 /* SurveyItemView.swift */,
+				C206D7D4237889D2007D59D3 /* SurveyGridViewModel.swift */,
 				C21D3D83238F071400D1B220 /* SurveyGridView.swift */,
 				C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */,
 			);
@@ -241,11 +242,21 @@
 			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
+		C2246A212392D09D008C3C60 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C2246A222392D0D5008C3C60 /* ModelDependency.swift */,
+				C2246A242392D126008C3C60 /* ViewModelFactories.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		C24B08B4238085CB0062AD81 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
 				C24B08B5238085E40062AD81 /* ModalTest.swift */,
-				C24B08B7238088350062AD81 /* SurveyDetailModal.swift */,
+				C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */,
+				C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -357,21 +368,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C206D7D5237889D2007D59D3 /* SurveyListViewModel.swift in Sources */,
+				C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */,
 				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
+				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
-				C24B08B8238088350062AD81 /* SurveyDetailModal.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,
-				C2A96EEB237B66E8002A4E26 /* SurveyItemView.swift in Sources */,
+				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
+				C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */,
 				C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */,
 				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
-				C206D7D3237889BD007D59D3 /* SurveyListView.swift in Sources */,
+				C2246A202392C9B1008C3C60 /* ModalPresentable.swift in Sources */,
 				C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */,
 				C21D3D8923929A0A00D1B220 /* ActivityIndicator.swift in Sources */,
 				C21D3D8B23929BD800D1B220 /* LoadingView.swift in Sources */,
