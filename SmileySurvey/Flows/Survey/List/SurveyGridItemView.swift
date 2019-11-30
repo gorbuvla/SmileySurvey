@@ -20,20 +20,23 @@ struct SurveyGridItemView: View {
                 DonutChart(data: survey.chartData)
                     .padding()
                 
-                VStack {
-                    Text(survey.name)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-                
-                    Text(survey.question)
-                        .font(.title)
-                        .fontWeight(.heavy)
-                        .foregroundColor(.primary)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(survey.name)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
                     
-                    Text("Number of corrspondents: \(survey.totalCorrespondents)".uppercased())
-                        .font(.system(size: 10))
-                        .foregroundColor(.secondary)
-                        .aspectRatio(contentMode: .fit)
+                        Text(survey.question)
+                            .font(.subheadline)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.primary)
+                        
+                        Text("Number of corrspondents: \(survey.totalCorrespondents)".uppercased())
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                    }.layoutPriority(100)
+                    
+                    Spacer()
                 }.padding()
             }
         }
@@ -42,7 +45,8 @@ struct SurveyGridItemView: View {
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
         .cornerRadius(16)
-            .aspectRatio(0.75, contentMode: .fit)
+        .aspectRatio(0.75, contentMode: .fit)
+        .background(Color.white)
     }
 }
 
