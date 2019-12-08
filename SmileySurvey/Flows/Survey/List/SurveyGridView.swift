@@ -16,14 +16,25 @@ struct SurveyGridView: View {
     @State private var showsAddNewSurvey: Bool = false
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
+    
     var body: some View {
-        LoadingView(isLoading: $viewModel.loading) {
+//        let binding = Binding<Bool>(
+//            get: { self.viewModel.selectedSurvey != nil },
+//            set: { self.viewModel.selectedSurvey = nil }
+//        )
+//
+        return LoadingView(isLoading: $viewModel.loading) {
             NavigationView {
                 self.listContent
                     .navigationBarTitle("Surveys", displayMode: .inline)
                     .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
             }
             .navigationViewStyle(StackNavigationViewStyle())
+        
+            .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
+                SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
+            })
+            
         }
     }
 
@@ -34,7 +45,9 @@ struct SurveyGridView: View {
             } else {
                 return AnyView(
                     Grid(self.viewModel.surveys) { survey in
-                        SurveyGridItemView(survey: survey)
+                        Button(action: { self.viewModel.select(survey: survey) }) {
+                            SurveyGridItemView(survey: survey)
+                        }
                     }
                     .gridStyle(StaggeredGridStyle(tracks: self.kTracksCount))
                 )

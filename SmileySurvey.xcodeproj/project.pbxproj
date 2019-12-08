@@ -30,6 +30,7 @@
 		C2246A202392C9B1008C3C60 /* ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */; };
 		C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A222392D0D5008C3C60 /* ModelDependency.swift */; };
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
+		C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentable.swift; sourceTree = "<group>"; };
 		C2246A222392D0D5008C3C60 /* ModelDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependency.swift; sourceTree = "<group>"; };
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
+		C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentableI.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +259,7 @@
 				C24B08B5238085E40062AD81 /* ModalTest.swift */,
 				C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */,
 				C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */,
+				C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
+				C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,

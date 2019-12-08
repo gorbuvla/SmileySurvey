@@ -16,7 +16,9 @@ final class SurveyGridViewModel: ObservableObject {
     
     @Published var surveys: [Survey] = []
     @Published var loading: Bool = true
+    @Published var showing: Bool = false
     @Published var error: Error? = nil
+    @Published var selectedSurvey: Survey? = nil
     
     init(repository: SurveyRepositoring) {
         self.repository = repository
@@ -27,6 +29,11 @@ final class SurveyGridViewModel: ObservableObject {
         surveys = (1...20).map { number in
             Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
         }
+    }
+    
+    func select(survey: Survey) {
+        showing = true
+        selectedSurvey = survey
     }
     
     private func bindUpdates() {
