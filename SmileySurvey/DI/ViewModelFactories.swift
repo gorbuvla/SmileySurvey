@@ -19,6 +19,10 @@ final class ViewModelFactories {
     var surveyGridViewModel: () -> SurveyGridViewModel {
         return { SurveyGridViewModel(repository: self.dependencies.surveyRepository) }
     }
+    
+    var surveyFormViewModel: () -> SurveyFormViewModel {
+        return { SurveyFormViewModel() }
+    }
 }
 
 let factories = ViewModelFactories(modelDependency: ModelDependency())

@@ -57,7 +57,7 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            NavigationLink(destination: NewSurveyView()) {
+            NavigationLink(destination: SurveyFormView()) {
                 Image(systemName: "plus.circle")
             }
         }

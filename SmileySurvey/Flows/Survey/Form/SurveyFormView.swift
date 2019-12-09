@@ -7,8 +7,12 @@
 //
 
 import SwiftUI
+import Combine
 
-struct NewSurveyView: View {
+struct SurveyFormView: View {
+    
+    @ObservedObject
+    private var viewModel: SurveyFormViewModel = factories.surveyFormViewModel()
     
     @State private var name: String = ""
     @State private var question: String = ""
@@ -25,14 +29,12 @@ struct NewSurveyView: View {
             }
             
             Section(header: Text("Other")) {
-                TextField("Something", text: $something)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
+                FormTextFieldView("Something", value: $viewModel.something, error: $viewModel.somethingError)
             }
             
             Section {
                 Button(action: {
-                    print("Survey name: \(self.name)")
+                    self.viewModel.submit()
                 }) {
                     Text("Creare survey")
                 }
@@ -41,8 +43,8 @@ struct NewSurveyView: View {
     }
 }
 
-struct NewSurveyView_Previews: PreviewProvider {
+struct SurveyFormView_Previews: PreviewProvider {
     static var previews: some View {
-        NewSurveyView()
+        SurveyFormView()
     }
 }

@@ -32,7 +32,9 @@
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
-		C2C01ACB239D47FA0006FC8C /* NewSurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* NewSurveyView.swift */; };
+		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
+		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
+		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +76,9 @@
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentableI.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
-		C2C01ACA239D47FA0006FC8C /* NewSurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSurveyView.swift; sourceTree = "<group>"; };
+		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
+		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
+		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +165,7 @@
 		C206D7CF23788985007D59D3 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				C2C01AC9239D47E10006FC8C /* New */,
+				C2C01AC9239D47E10006FC8C /* Form */,
 				C24B08B4238085CB0062AD81 /* Modal */,
 				C206D7DF23788D62007D59D3 /* Active */,
 				C206D7D023788992007D59D3 /* List */,
@@ -223,6 +227,7 @@
 		C207E0612380976A00F59D1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2E362DA239EF92F00AC9913 /* FormTextField */,
 				C21D3D87239299B100D1B220 /* ActivityIndicator */,
 				C207E0622380977200F59D1A /* Chart */,
 			);
@@ -267,12 +272,21 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
-		C2C01AC9239D47E10006FC8C /* New */ = {
+		C2C01AC9239D47E10006FC8C /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				C2C01ACA239D47FA0006FC8C /* NewSurveyView.swift */,
+				C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */,
+				C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */,
 			);
-			path = New;
+			path = Form;
+			sourceTree = "<group>";
+		};
+		C2E362DA239EF92F00AC9913 /* FormTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */,
+			);
+			path = FormTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,15 +399,17 @@
 				C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */,
 				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
+				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
-				C2C01ACB239D47FA0006FC8C /* NewSurveyView.swift in Sources */,
+				C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */,
 				C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,
 				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
+				C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */,
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */,
