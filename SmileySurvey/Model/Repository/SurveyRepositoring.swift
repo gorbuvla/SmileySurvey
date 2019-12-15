@@ -10,4 +10,7 @@ import Combine
 protocol SurveyRepositoring {
     // TODO - check for possible errors
     func observeSurveys() -> AnyPublisher<[Survey], Never>
+    
+    func createSurvey(survey: Survey) -> AnyPublisher<(), Never>
+    
 }

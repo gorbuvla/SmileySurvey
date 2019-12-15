@@ -14,32 +14,26 @@ struct SurveyFormView: View {
     @ObservedObject
     private var viewModel: SurveyFormViewModel = factories.surveyFormViewModel()
     
-    @State private var name: String = ""
-    @State private var question: String = ""
-    @State private var something: String = ""
+    @Environment(\.presentationMode)
+    private var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         Form {
             Section(header: Text("Survey")) {
-                TextField("Enter survey name", text: $name)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                FormTextFieldView("Survey name", value: $viewModel.name, error: $viewModel.nameValidation)
                 
-                TextField("Enter survey question", text: $question)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-            
-            Section(header: Text("Other")) {
-                FormTextFieldView("Something", value: $viewModel.something, error: $viewModel.somethingError)
+                FormTextFieldView("Survey question", value: $viewModel.question, error: $viewModel.questionValidation)
             }
             
             Section {
-                Button(action: {
-                    self.viewModel.submit()
-                }) {
-                    Text("Creare survey")
+                Button(action: { self.viewModel.submit() }) {
+                    Text("Create survey")
                 }
             }
         }.navigationBarTitle("New survey")
+            .onReceive(viewModel.publisher) {
+                self.presentationMode.wrappedValue.dismiss()
+        }
     }
 }
 

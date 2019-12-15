@@ -21,7 +21,7 @@ final class ViewModelFactories {
     }
     
     var surveyFormViewModel: () -> SurveyFormViewModel {
-        return { SurveyFormViewModel() }
+        return { SurveyFormViewModel(repository: self.dependencies.surveyRepository) }
     }
 }
 

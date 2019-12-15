@@ -35,6 +35,7 @@
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
+		C2E71D7323A675560053312D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E71D7223A675560053312D /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
+		C2E71D7223A675560053312D /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			children = (
 				C206D7DA23788A37007D59D3 /* Domain */,
 				C206D7D7237889F2007D59D3 /* Repository */,
+				C2E71D7223A675560053312D /* Operation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
+				C2E71D7323A675560053312D /* Operation.swift in Sources */,
 				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,
 				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
 				C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */,
