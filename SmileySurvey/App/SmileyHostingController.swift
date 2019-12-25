@@ -6,7 +6,6 @@
 //  Copyright © 2019 Vlad Gorbunov. All rights reserved.
 //
 
-import UIKit
 import SwiftUI
 
 extension Notification.Name {

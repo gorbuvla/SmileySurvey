@@ -6,7 +6,6 @@
 //  Copyright © 2019 Vlad Gorbunov. All rights reserved.
 //
 
-import Foundation
 import SwiftUI
 
 enum Orientation {

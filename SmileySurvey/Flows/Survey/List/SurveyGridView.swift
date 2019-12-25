@@ -17,7 +17,7 @@ struct SurveyGridView: View {
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     private var tracksCount: Tracks {
-        get { rotationObserver.mode == Orientation.landscape ? Tracks.count(4) : Tracks.count(2) }
+        get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
     }
     
     var body: some View {
