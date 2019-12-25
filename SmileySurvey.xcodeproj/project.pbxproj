@@ -10,7 +10,6 @@
 		C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7A9237888BE007D59D3 /* AppDelegate.swift */; };
 		C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AB237888BE007D59D3 /* SceneDelegate.swift */; };
 		C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */; };
-		C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7B0237888BE007D59D3 /* ContentView.swift */; };
 		C206D7B3237888C3007D59D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B2237888C3007D59D3 /* Assets.xcassets */; };
 		C206D7B6237888C3007D59D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */; };
 		C206D7B9237888C3007D59D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */; };
@@ -62,7 +61,6 @@
 		C206D7A9237888BE007D59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C206D7AB237888BE007D59D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmileSurvey.xcdatamodel; sourceTree = "<group>"; };
-		C206D7B0237888BE007D59D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C206D7B2237888C3007D59D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C206D7B8237888C3007D59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			children = (
 				C206D7A9237888BE007D59D3 /* AppDelegate.swift */,
 				C206D7AB237888BE007D59D3 /* SceneDelegate.swift */,
-				C206D7B0237888BE007D59D3 /* ContentView.swift */,
 				C2A3E0E223B3D7660007A140 /* SmileyHostingController.swift */,
 			);
 			path = App;
@@ -489,7 +486,6 @@
 				C2A3E0E623B3D8C50007A140 /* RotationObserver.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C2E71D7323A675560053312D /* Operation.swift in Sources */,
-				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,
 				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
 				C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */,
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
