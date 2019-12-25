@@ -31,7 +31,7 @@ struct SurveyGridItemView: View {
                             .fontWeight(.heavy)
                             .foregroundColor(.primary)
                         
-                        Text("Number of corrspondents: \(survey.totalCorrespondents)".uppercased())
+                        Text(L10n.Survey.Grid.Item.correspondents(survey.totalCorrespondents).uppercased())
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }.layoutPriority(100)
@@ -61,15 +61,8 @@ struct SurveyGridItemView_Previews: PreviewProvider {
 
 extension Survey {
     // TODO: revisit colors once swiftgen is set up
-    var chartData: [(Int, Color)] {
-        get {
-            [
-                (disaster, Color.red),
-                (bad, Color.yellow),
-                (good, Color.blue),
-                (excellent, Color.green)
-            ]
-        }
+    var chartData: ChartRating {
+        get { ChartRating(excellent: excellent, good: good, bad: bad, disaster: disaster) }
     }
 }
 

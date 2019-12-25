@@ -32,6 +32,13 @@
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
+		C2A3E0BA23B3B45C0007A140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0B923B3B45C0007A140 /* Localizable.strings */; };
+		C2A3E0BD23B3B5180007A140 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0BC23B3B5180007A140 /* colors.json */; };
+		C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */; };
+		C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0D823B3C7E10007A140 /* Assets.swift */; };
+		C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0D923B3C7E10007A140 /* LocalizedStrings.swift */; };
+		C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0DC23B3CD010007A140 /* ImageResources.swift */; };
+		C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -77,6 +84,13 @@
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentableI.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
+		C2A3E0B923B3B45C0007A140 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C2A3E0BC23B3B5180007A140 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
+		C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResources.swift; sourceTree = "<group>"; };
+		C2A3E0D823B3C7E10007A140 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = Generated/Assets.swift; sourceTree = "<group>"; };
+		C2A3E0D923B3C7E10007A140 /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedStrings.swift; path = Generated/LocalizedStrings.swift; sourceTree = "<group>"; };
+		C2A3E0DC23B3CD010007A140 /* ImageResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
+		C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSurveyView.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -127,12 +141,10 @@
 				C207E0612380976A00F59D1A /* Views */,
 				C206D7D6237889EB007D59D3 /* Model */,
 				C206D7CE23788969007D59D3 /* Flows */,
+				C2A3E0B823B3B42A0007A140 /* Resources */,
 				C206D7A9237888BE007D59D3 /* AppDelegate.swift */,
 				C206D7AB237888BE007D59D3 /* SceneDelegate.swift */,
 				C206D7B0237888BE007D59D3 /* ContentView.swift */,
-				C206D7B2237888C3007D59D3 /* Assets.xcassets */,
-				C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */,
-				C206D7BA237888C3007D59D3 /* Info.plist */,
 				C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */,
 				C206D7B4237888C3007D59D3 /* Preview Content */,
 			);
@@ -167,11 +179,10 @@
 		C206D7CF23788985007D59D3 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0DE23B3D0560007A140 /* Active */,
 				C2C01AC9239D47E10006FC8C /* Form */,
 				C24B08B4238085CB0062AD81 /* Modal */,
-				C206D7DF23788D62007D59D3 /* Active */,
 				C206D7D023788992007D59D3 /* List */,
-				C206D7D12378899D007D59D3 /* Detail */,
 			);
 			path = Survey;
 			sourceTree = "<group>";
@@ -184,13 +195,6 @@
 				C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		C206D7D12378899D007D59D3 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		C206D7D6237889EB007D59D3 /* Model */ = {
@@ -218,13 +222,6 @@
 				C206D7DB23788A45007D59D3 /* Survey.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		C206D7DF23788D62007D59D3 /* Active */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Active;
 			sourceTree = "<group>";
 		};
 		C207E0612380976A00F59D1A /* Views */ = {
@@ -275,6 +272,30 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		C2A3E0B823B3B42A0007A140 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3E0D823B3C7E10007A140 /* Assets.swift */,
+				C2A3E0D923B3C7E10007A140 /* LocalizedStrings.swift */,
+				C206D7B2237888C3007D59D3 /* Assets.xcassets */,
+				C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */,
+				C206D7BA237888C3007D59D3 /* Info.plist */,
+				C2A3E0B923B3B45C0007A140 /* Localizable.strings */,
+				C2A3E0BC23B3B5180007A140 /* colors.json */,
+				C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */,
+				C2A3E0DC23B3CD010007A140 /* ImageResources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C2A3E0DE23B3D0560007A140 /* Active */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */,
+			);
+			path = Active;
+			sourceTree = "<group>";
+		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C206D7C8237888C3007D59D3 /* Build configuration list for PBXNativeTarget "SmileySurvey" */;
 			buildPhases = (
+				C2A3E0BB23B3B4BF0007A140 /* SwiftGen */,
 				C206D7A2237888BE007D59D3 /* Sources */,
 				C206D7A3237888BE007D59D3 /* Frameworks */,
 				C206D7A4237888BE007D59D3 /* Resources */,
@@ -380,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C206D7B9237888C3007D59D3 /* LaunchScreen.storyboard in Resources */,
+				C2A3E0BD23B3B5180007A140 /* colors.json in Resources */,
+				C2A3E0BA23B3B45C0007A140 /* Localizable.strings in Resources */,
 				C206D7B6237888C3007D59D3 /* Preview Assets.xcassets in Resources */,
 				C206D7B3237888C3007D59D3 /* Assets.xcassets in Resources */,
 			);
@@ -394,6 +418,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C2A3E0BB23B3B4BF0007A140 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Localizable.strings",
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Images.xcassets",
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/LocalizedStrings.swift",
+				"${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/Assets.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "STR_SRC_FILE=\"${SCRIPT_INPUT_FILE_0}\"\nIMG_SRC_FILE=\"${SCRIPT_INPUT_FILE_1}\"\n\n\ntouch \"$STR_SRC_FILE\"\ntouch \"$IMG_SRC_FILE\"\n\nswiftgen strings -t structured-swift4 \"$STR_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\necho $?\n\nswiftgen xcassets -t swift4 \"$IMG_SRC_FILE\" -o \"${SCRIPT_OUTPUT_FILE_1}\"\necho $?\n\n# TODO: currently unable to generatge colors as there is a missmatch between swiftgen typealias and swiftui color\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C206D7A2237888BE007D59D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -404,9 +453,14 @@
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
+				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
 				C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */,
+				C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */,
 				C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */,
+				C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */,
+				C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */,
+				C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
@@ -506,6 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -560,6 +615,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -578,7 +634,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SmileySurvey/Info.plist;
+				INFOPLIST_FILE = SmileySurvey/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,7 +654,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = SmileySurvey/Info.plist;
+				INFOPLIST_FILE = SmileySurvey/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,7 +720,7 @@
 				C206D7C7237888C3007D59D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C206D7C8237888C3007D59D3 /* Build configuration list for PBXNativeTarget "SmileySurvey" */ = {
 			isa = XCConfigurationList;
@@ -673,7 +729,7 @@
 				C206D7CA237888C3007D59D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		C206D7CB237888C3007D59D3 /* Build configuration list for PBXNativeTarget "SmileySurveyTests" */ = {
 			isa = XCConfigurationList;
@@ -682,7 +738,7 @@
 				C206D7CD237888C3007D59D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 
