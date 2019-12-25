@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  SmileySurvey
+
+  Created by Vlad Gorbunov on 25/12/2019.
+  Copyright © 2019 Vlad Gorbunov. All rights reserved.
+*/
+"app.name" = "SmileySurvey";
+
+// Main view, survey grid
+
+"survey.grid.title" = "Surveys";
+"survey.grid.empty" = "No surveys yet";
+"survey.grid.item.correspondents" = "Number of correspondents: %d";
+
+// New Survey Form
+
+"survey.form.title" = "New survey";
+"survey.form.surveySection" = "Survey";
+"survey.form.name.hint" = "Survey name";
+"survey.form.name.error" = "Must not be empty";
+"survey.form.question.hint" = "Survey question";
+"survey.form.question.error" = "Most not be empty";
+"survey.form.create" = "Create survey";

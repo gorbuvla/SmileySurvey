@@ -8,9 +8,16 @@
 
 import SwiftUI
 
+struct ChartRating {
+    let excellent: Int
+    let good: Int
+    let bad: Int
+    let disaster: Int
+}
+
 struct DonutChart: View {
 
-    let data: [(Int, Color)]
+    let data: ChartRating
 
     var body: some View {
         GeometryReader { proxy in
@@ -22,8 +29,9 @@ struct DonutChart: View {
         }
     }
     
-    private static func computeSegments(for rect: CGRect, with data: [(Int, Color)]) -> [DonutSegment] {
-        let total = data.map { (value, _) in value }.reduce(0, +) // 😱 so cool
+    private static func computeSegments(for rect: CGRect, with data: ChartRating) -> [DonutSegment] {
+        let arrayData = [(data.disaster, Color.ratingDisaster), (data.bad, Color.ratingBad), (data.good, Color.ratingGood), (data.excellent, Color.ratingExcellent)]
+        let total = arrayData.map { (value, _) in value }.reduce(0, +) // 😱 so cool
         let degreesPerPoint = 360.0 / Double(total)
         let radius = min(rect.width, rect.height) / 2
         let center = rect.center
@@ -31,7 +39,7 @@ struct DonutChart: View {
         var lastDegree = 0.0
         var segments = [DonutSegment]()
 
-        data.forEach { (value, color) in
+        arrayData.forEach { (value, color) in
             let arcDegrees = Double(value) * degreesPerPoint
             let segment = DonutSegment(radius: radius, center: center, startDegree: lastDegree, endDegree: lastDegree + arcDegrees, value: value, color: color)
             
@@ -47,7 +55,12 @@ struct DonutChart: View {
 struct DonutChart_Previews: PreviewProvider {
     static var previews: some View {
         // same data as in JMs example
-        let data = [(100, Color.red), (115, Color.blue), (358, Color.yellow), (858, Color.green)]
+        let data = ChartRating(
+            excellent: 858,
+            good: 358,
+            bad: 115,
+            disaster: 100
+        )
         return DonutChart(data: data)
     }
 }

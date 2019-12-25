@@ -1,0 +1,8 @@
+{
+    "secondary": "#FF8E5D",
+    "primary": "#FFFFFF",
+    "rating.disaster": "#ED2327",
+    "rating.bad": "#F37D7F",
+    "rating.good": "#97CE71",
+    "rating.excellent": "#049D30"
+}

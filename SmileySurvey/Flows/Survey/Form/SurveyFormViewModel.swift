@@ -14,21 +14,16 @@ class SurveyFormViewModel: ObservableObject {
     private let repository: SurveyRepositoring
     
     @Published var name: String = "" {
-        didSet {
-            nameValidation = nil
-        }
+        didSet { nameValidation = nil } // erase error when user continues typing
     }
     
     @Published var question: String = "" {
-        didSet {
-            questionValidation = nil
-        }
+        didSet { questionValidation = nil } // erase error when user continues typing
     }
     
     @Published var nameValidation: String? = nil
     @Published var questionValidation: String? = nil
     
-    //@Action var createSurvey: State<(), Never>
     private var actionSubject = PassthroughSubject<(), Never>()
     
     var publisher: AnyPublisher<(), Never> {
@@ -41,20 +36,22 @@ class SurveyFormViewModel: ObservableObject {
     
     func submit() {
         guard !name.isEmpty && !question.isEmpty else {
-            nameValidation = name.isEmpty ? "Must not be empty" : nil
-            questionValidation = question.isEmpty ? "Must not be empty" : nil
+            nameValidation = name.isEmpty ? L10n.Survey.Form.Name.error : nil
+            questionValidation = question.isEmpty ? L10n.Survey.Form.Question.error : nil
             return
         }
+    
+        // 3. get result & navigate back
         
         actionSubject.send(())
         
         repository.createSurvey(survey: Survey(name: name, question: question))
         
-        
     
-        // 3. get result & navigate back
     }
 }
+
+// MARK: todo
 
 //@propertyWrapper
 //class Action<Value, Error> {

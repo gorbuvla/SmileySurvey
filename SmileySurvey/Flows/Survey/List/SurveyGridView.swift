@@ -18,30 +18,23 @@ struct SurveyGridView: View {
     
     
     var body: some View {
-//        let binding = Binding<Bool>(
-//            get: { self.viewModel.selectedSurvey != nil },
-//            set: { self.viewModel.selectedSurvey = nil }
-//        )
-//
-        return LoadingView(isLoading: $viewModel.loading) {
+        LoadingView(isLoading: $viewModel.loading) {
             NavigationView {
                 self.listContent
-                    .navigationBarTitle("Surveys", displayMode: .inline)
+                    .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
                     .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
             }
             .navigationViewStyle(StackNavigationViewStyle())
-        
             .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
                 SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
             })
-            
         }
     }
 
     private var listContent: some View {
         get {
             if viewModel.surveys.isEmpty {
-                return AnyView(Text("No surveys yet"))
+                return AnyView(Text(L10n.Survey.Grid.empty))
             } else {
                 return AnyView(
                     Grid(self.viewModel.surveys) { survey in
@@ -58,7 +51,7 @@ struct SurveyGridView: View {
     private var trailingNavItem: some View {
         get {
             NavigationLink(destination: SurveyFormView()) {
-                Image(systemName: "plus.circle")
+                Image.new
             }
         }
     }
@@ -66,7 +59,7 @@ struct SurveyGridView: View {
     private var leadingNavItem: some View {
         get {
              Button(action: { self.viewModel.reload() }) {
-                Image(systemName: "arrow.clockwise.circle")
+                Image.reload
             }
         }
     }
