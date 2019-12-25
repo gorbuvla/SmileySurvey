@@ -18,4 +18,10 @@ final class MockedSurveyRepository: SurveyRepositoring {
         
         return Just(surveys).eraseToAnyPublisher()
     }
+    
+    func createSurvey(survey: Survey) -> AnyPublisher<(), Never> {
+        return Just(())
+            .delay(for: 2, scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
 }

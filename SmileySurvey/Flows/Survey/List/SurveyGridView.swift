@@ -57,12 +57,8 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            Button(action: { self.showsAddNewSurvey = true }) {
+            NavigationLink(destination: SurveyFormView()) {
                 Image(systemName: "plus.circle")
-            }
-            .alert(isPresented: $showsAddNewSurvey) {
-                // TODO: present new survey form
-                Alert(title: Text("Add new survey"), message: Text("!!!"), dismissButton: .default(Text("ADD")))
             }
         }
     }
