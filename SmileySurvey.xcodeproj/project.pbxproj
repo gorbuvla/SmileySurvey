@@ -39,6 +39,8 @@
 		C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0D923B3C7E10007A140 /* LocalizedStrings.swift */; };
 		C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0DC23B3CD010007A140 /* ImageResources.swift */; };
 		C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */; };
+		C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0E223B3D7660007A140 /* SmileyHostingController.swift */; };
+		C2A3E0E623B3D8C50007A140 /* RotationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0E523B3D8C50007A140 /* RotationObserver.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -91,6 +93,8 @@
 		C2A3E0D923B3C7E10007A140 /* LocalizedStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizedStrings.swift; path = Generated/LocalizedStrings.swift; sourceTree = "<group>"; };
 		C2A3E0DC23B3CD010007A140 /* ImageResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
 		C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSurveyView.swift; sourceTree = "<group>"; };
+		C2A3E0E223B3D7660007A140 /* SmileyHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileyHostingController.swift; sourceTree = "<group>"; };
+		C2A3E0E523B3D8C50007A140 /* RotationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationObserver.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -142,9 +146,7 @@
 				C206D7D6237889EB007D59D3 /* Model */,
 				C206D7CE23788969007D59D3 /* Flows */,
 				C2A3E0B823B3B42A0007A140 /* Resources */,
-				C206D7A9237888BE007D59D3 /* AppDelegate.swift */,
-				C206D7AB237888BE007D59D3 /* SceneDelegate.swift */,
-				C206D7B0237888BE007D59D3 /* ContentView.swift */,
+				C2A3E0E123B3D73C0007A140 /* App */,
 				C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */,
 				C206D7B4237888C3007D59D3 /* Preview Content */,
 			);
@@ -200,6 +202,7 @@
 		C206D7D6237889EB007D59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0E423B3D8A90007A140 /* Environment */,
 				C206D7DA23788A37007D59D3 /* Domain */,
 				C206D7D7237889F2007D59D3 /* Repository */,
 				C2E71D7223A675560053312D /* Operation.swift */,
@@ -294,6 +297,25 @@
 				C2A3E0DF23B3D0680007A140 /* ActiveSurveyView.swift */,
 			);
 			path = Active;
+			sourceTree = "<group>";
+		};
+		C2A3E0E123B3D73C0007A140 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C206D7A9237888BE007D59D3 /* AppDelegate.swift */,
+				C206D7AB237888BE007D59D3 /* SceneDelegate.swift */,
+				C206D7B0237888BE007D59D3 /* ContentView.swift */,
+				C2A3E0E223B3D7660007A140 /* SmileyHostingController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C2A3E0E423B3D8A90007A140 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3E0E523B3D8C50007A140 /* RotationObserver.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {
@@ -451,6 +473,7 @@
 				C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */,
 				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
 				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
+				C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
@@ -463,6 +486,7 @@
 				C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
+				C2A3E0E623B3D8C50007A140 /* RotationObserver.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C2E71D7323A675560053312D /* Operation.swift in Sources */,
 				C206D7B1237888BE007D59D3 /* ContentView.swift in Sources */,

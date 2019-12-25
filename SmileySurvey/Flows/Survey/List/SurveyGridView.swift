@@ -10,12 +10,15 @@ import SwiftUI
 import Grid
 
 struct SurveyGridView: View {
-    
-    private let kTracksCount = Tracks.count(4)
+        
+    @EnvironmentObject var rotationObserver: RotationObserver
     
     @State private var showsAddNewSurvey: Bool = false
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
+    private var tracksCount: Tracks {
+        get { rotationObserver.mode == Orientation.landscape ? Tracks.count(4) : Tracks.count(2) }
+    }
     
     var body: some View {
         LoadingView(isLoading: $viewModel.loading) {
@@ -42,7 +45,7 @@ struct SurveyGridView: View {
                             SurveyGridItemView(survey: survey)
                         }
                     }
-                    .gridStyle(StaggeredGridStyle(tracks: self.kTracksCount))
+                    .gridStyle(StaggeredGridStyle(tracks: self.tracksCount))
                 )
             }
         }
