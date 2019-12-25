@@ -11,6 +11,7 @@ import Combine
 
 class SurveyFormViewModel: ObservableObject {
     
+    private var cancellables = Set<AnyCancellable>()
     private let repository: SurveyRepositoring
     
     @Published var name: String = "" {
@@ -41,13 +42,15 @@ class SurveyFormViewModel: ObservableObject {
             return
         }
     
-        // 3. get result & navigate back
-        
-        actionSubject.send(())
-        
         repository.createSurvey(survey: Survey(name: name, question: question))
-        
-    
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .delay(for: 2.0, scheduler: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] _ in
+                // TODO: sink directly into subject 🤔
+                self?.actionSubject.send(())
+            })
+            .store(in: &cancellables)
     }
 }
 

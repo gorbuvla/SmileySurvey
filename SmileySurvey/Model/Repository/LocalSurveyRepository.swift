@@ -22,11 +22,13 @@ final class MockedSurveyRepository: SurveyRepositoring {
     }
     
     func createSurvey(survey: Survey) -> AnyPublisher<(), Never> {
-        let surveys = surveysSubject.value + [survey]
-        surveysSubject.send(surveys)
-        
-        return Just(())
-            .delay(for: 2, scheduler: DispatchQueue.main)
-            .eraseToAnyPublisher()
+        return Deferred {
+            Future<(), Never> { promise in
+                let surveys = self.surveysSubject.value + [survey]
+                self.surveysSubject.send(surveys)
+                
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
     }
 }
