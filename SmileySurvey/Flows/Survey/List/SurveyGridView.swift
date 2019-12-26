@@ -14,6 +14,7 @@ struct SurveyGridView: View {
     @EnvironmentObject var rotationObserver: RotationObserver
     
     @State private var showsAddNewSurvey: Bool = false
+    @State private var isPresented = false
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     private var tracksCount: Tracks {
@@ -30,7 +31,11 @@ struct SurveyGridView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
                 SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
-            })
+            }).popover(isPresented: self.$isPresented) {
+                ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
+                    .environmentObject(self.rotationObserver)
+                
+            }
         }
     }
 
@@ -53,8 +58,16 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            NavigationLink(destination: SurveyFormView()) {
-                Image.new
+            HStack {
+                NavigationLink(destination: SurveyFormView()) {
+                    Image.new
+                }
+                Button(action: { self.isPresented.toggle() }) {
+                    Image.reload
+                }
+//                NavigationLink(destination: ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))) {
+//                    Image.reload
+//                }
             }
         }
     }

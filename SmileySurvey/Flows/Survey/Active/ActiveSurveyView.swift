@@ -14,7 +14,12 @@ struct ActiveSurveyView: View {
     @ObservedObject var viewModel: ActiveSurveyViewModel
     
     var body: some View {
-        HStack {
+        VStack {
+            Text(viewModel.survey.question)
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .foregroundColor(.primary)
+            
             if rotationObserver.mode == .portrait {
                 gridReactionView
             } else {
@@ -25,32 +30,46 @@ struct ActiveSurveyView: View {
     
     private var gridReactionView: some View {
         VStack {
-            Text(viewModel.survey.question)
-            
             HStack {
                 Button(action: { self.viewModel.submit(reaction: .good) }) {
-                    Image.ratingDisaster
-                }
+                    Image.ratingExcellent.fitIntoBounds()
+                }.smallPadding()
                 
                 Button(action: { self.viewModel.submit(reaction: .excellent) }) {
-                    Image.ratingDisaster
-                }
+                    Image.ratingGood.fitIntoBounds()
+                }.smallPadding()
             }
             
             HStack {
                 Button(action: { self.viewModel.submit(reaction: .disaster) }) {
-                    Image.ratingDisaster
-                }
+                    Image.ratingBad.fitIntoBounds()
+                }.smallPadding()
                 
                 Button(action: { self.viewModel.submit(reaction: .bad) }) {
-                    Image.ratingDisaster
-                }
+                    Image.ratingDisaster.fitIntoBounds()
+                }.smallPadding()
             }
-        }
+        }.largePadding()
     }
     
     private var lineReactionView: some View {
-        Text("Ogo2")
+        HStack {
+            Button(action: { self.viewModel.submit(reaction: .good) }) {
+                Image.ratingExcellent.fitIntoBounds()
+            }.smallPadding()
+            
+            Button(action: { self.viewModel.submit(reaction: .excellent) }) {
+                Image.ratingGood.fitIntoBounds()
+            }.smallPadding()
+                
+            Button(action: { self.viewModel.submit(reaction: .good) }) {
+                Image.ratingBad.fitIntoBounds()
+            }.smallPadding()
+                
+            Button(action: { self.viewModel.submit(reaction: .excellent) }) {
+                Image.ratingDisaster.fitIntoBounds()
+            }.smallPadding()
+        }.largePadding()
     }
 }
 

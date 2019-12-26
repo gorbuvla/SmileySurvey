@@ -15,4 +15,10 @@ extension Image {
     static let reload = Image(systemName: "arrow.clockwise.circle")
     
     static let ratingDisaster = Image("smiley-disaster")
+    
+    static let ratingBad = Image("smiley-bad")
+    
+    static let ratingGood = Image("smiley-good")
+    
+    static let ratingExcellent = Image("smiley-excellent")
 }
