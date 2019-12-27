@@ -43,7 +43,7 @@ class SurveyFormViewModel: ObservableObject {
     
     init(repository: SurveyRepositoring) {
         self.repository = repository
-        submitAction = Action { input in repository.createSurvey(survey: input) }
+        submitAction = Action { input in repository.create(survey: input) }
         submitAction.loading.receive(on: RunLoop.main).sink { self.loading = $0 }.store(in: &cancellables)
     }
     

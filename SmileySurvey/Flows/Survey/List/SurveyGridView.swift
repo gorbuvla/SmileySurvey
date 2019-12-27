@@ -12,10 +12,10 @@ import Grid
 struct SurveyGridView: View {
         
     @EnvironmentObject var rotationObserver: RotationObserver
+    @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     @State private var showsAddNewSurvey: Bool = false
     @State private var isPresented = false
-    @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
@@ -29,10 +29,15 @@ struct SurveyGridView: View {
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
-        .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
-            SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
-        }).popover(isPresented: self.$isPresented) {
+//        .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
+//            SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
+//        })
+            .popover(isPresented: self.$isPresented) {
             ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
+                .environmentObject(self.rotationObserver)
+        }
+        .popover(isPresented: self.$viewModel.showing) {
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!))
                 .environmentObject(self.rotationObserver)
         }
     }

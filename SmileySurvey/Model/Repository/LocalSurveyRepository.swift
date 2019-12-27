@@ -21,10 +21,22 @@ final class MockedSurveyRepository: SurveyRepositoring {
         return surveysSubject.eraseToAnyPublisher()
     }
     
-    func createSurvey(survey: Survey) -> AnyPublisher<(), Never> {
+    func create(survey: Survey) -> AnyPublisher<(), Never> {
         return Deferred {
             Future<(), Never> { promise in
                 let surveys = self.surveysSubject.value + [survey]
+                self.surveysSubject.send(surveys)
+                
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func delete(survey: Survey) -> AnyPublisher<(), Never> {
+        return Deferred {
+            Future<(), Never> { promise in
+                let surveys = self.surveysSubject.value.filter { item in item.id != survey.id }
+                
                 self.surveysSubject.send(surveys)
                 
                 promise(.success(()))

@@ -28,3 +28,10 @@ class RotationObserver: ObservableObject {
         mode = size.width > size.height ? .landscape : .portrait
     }    
 }
+
+extension RotationObserver {
+    
+    var isPortrait: Bool {
+        get { mode == .portrait }
+    }
+}
