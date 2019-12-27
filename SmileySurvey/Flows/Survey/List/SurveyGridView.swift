@@ -22,20 +22,18 @@ struct SurveyGridView: View {
     }
     
     var body: some View {
-        LoadingView(isLoading: $viewModel.loading) {
-            NavigationView {
-                self.listContent
-                    .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
-                    .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
-                SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
-            }).popover(isPresented: self.$isPresented) {
-                ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
-                    .environmentObject(self.rotationObserver)
-                
-            }
+        NavigationView {
+            self.listContent
+                .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
+                .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
+        }
+        .loading(isLoading: $viewModel.loading)
+        .navigationViewStyle(StackNavigationViewStyle())
+        .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
+            SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
+        }).popover(isPresented: self.$isPresented) {
+            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
+                .environmentObject(self.rotationObserver)
         }
     }
 

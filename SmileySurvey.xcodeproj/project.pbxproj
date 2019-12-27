@@ -206,6 +206,7 @@
 		C206D7D6237889EB007D59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0EE23B6367C0007A140 /* Action */,
 				C2A3E0E423B3D8A90007A140 /* Environment */,
 				C206D7DA23788A37007D59D3 /* Domain */,
 				C206D7D7237889F2007D59D3 /* Repository */,
@@ -330,6 +331,13 @@
 				C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */,
 			);
 			path = ViewExtensions;
+			sourceTree = "<group>";
+		};
+		C2A3E0EE23B6367C0007A140 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {

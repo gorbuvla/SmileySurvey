@@ -20,21 +20,19 @@ struct SurveyFormView: View {
     var body: some View {
         Form {
             Section(header: Text(L10n.Survey.Form.surveySection)) {
-                FormTextFieldView(L10n.Survey.Form.Name.hint, value: $viewModel.name, error: $viewModel.nameValidation)
-                
-                FormTextFieldView(L10n.Survey.Form.Question.hint, value: $viewModel.question, error: $viewModel.questionValidation)
+                FormTextFieldView(L10n.Survey.Form.Name.hint, value: self.$viewModel.name, error: self.$viewModel.nameValidation)
+                    
+                FormTextFieldView(L10n.Survey.Form.Question.hint, value: self.$viewModel.question, error: self.$viewModel.questionValidation)
             }
-            
+                
             Section {
                 Button(action: { self.viewModel.submit() }) {
                     Text(L10n.Survey.Form.create)
                 }
             }
-        }.navigationBarTitle(L10n.Survey.Form.title)
-            .onReceive(viewModel.publisher) {
-                self.presentationMode.wrappedValue.dismiss()
-
-        }
+        }.loading(isLoading: $viewModel.loading)
+            .navigationBarTitle(L10n.Survey.Form.title)
+            .onReceive(viewModel.completion) { self.presentationMode.wrappedValue.dismiss() }
     }
 }
 

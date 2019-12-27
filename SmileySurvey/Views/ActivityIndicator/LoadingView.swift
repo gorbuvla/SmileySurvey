@@ -36,6 +36,13 @@ struct LoadingView<Content: View>: View {
     }
 }
 
+extension View {
+    
+    func loading(isLoading: Binding<Bool>) -> some View {
+        return LoadingView(isLoading: isLoading) { self }
+    }
+}
+
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         LoadingView(isLoading: .constant(true)) {

@@ -10,9 +10,20 @@ import Foundation
 import Combine
 
 class SurveyFormViewModel: ObservableObject {
+
+    // MARK: private properties
     
     private var cancellables = Set<AnyCancellable>()
     private let repository: SurveyRepositoring
+    private let submitAction: Action<(Survey), Void, Never>
+    
+    // MARK: public properties
+    
+    var completion: AnyPublisher<(), Never> {
+        get { submitAction.data }
+    }
+    
+    // MARK: view bindings
     
     @Published var name: String = "" {
         didSet { nameValidation = nil } // erase error when user continues typing
@@ -25,14 +36,15 @@ class SurveyFormViewModel: ObservableObject {
     @Published var nameValidation: String? = nil
     @Published var questionValidation: String? = nil
     
-    private var actionSubject = PassthroughSubject<(), Never>()
+    @Published var loading: Bool = false
     
-    var publisher: AnyPublisher<(), Never> {
-        get { actionSubject.eraseToAnyPublisher() }
-    }
+    
+    // MARK: initializtion
     
     init(repository: SurveyRepositoring) {
         self.repository = repository
+        submitAction = Action { input in repository.createSurvey(survey: input) }
+        submitAction.loading.receive(on: RunLoop.main).sink { self.loading = $0 }.store(in: &cancellables)
     }
     
     func submit() {
@@ -42,15 +54,63 @@ class SurveyFormViewModel: ObservableObject {
             return
         }
     
-        repository.createSurvey(survey: Survey(name: name, question: question))
+        submitAction.apply(input: Survey(name: name, question: question))
+    }
+}
+
+class Action<Input, Output, Error: Swift.Error>: ObservableObject {
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    private let loadingSubject = CurrentValueSubject<Bool, Never>(false)
+    private let valueSubject = CurrentValueSubject<Output?, Never>(nil)
+    private let errorSubject = PassthroughSubject<Error, Never>()
+    private let execute: (Input) -> AnyPublisher<Output, Error>
+    
+    var loading: AnyPublisher<Bool, Never> {
+        get { loadingSubject.eraseToAnyPublisher() }
+    }
+    
+    var data: AnyPublisher<Output, Never> {
+        get { valueSubject.compactMap { $0 }.eraseToAnyPublisher() }
+    }
+    
+    var error: AnyPublisher<Error, Never> {
+        get { errorSubject.eraseToAnyPublisher() }
+    }
+    
+    init(execute: @escaping (Input) -> AnyPublisher<Output, Error>) {
+        self.execute = execute
+    }
+    
+    func apply(input: Input) {
+        loadingSubject.send(true)
+        
+        execute(input)
+            .mapSingleResult()
             .subscribe(on: DispatchQueue.global())
-            .receive(on: DispatchQueue.main)
-            .delay(for: 2.0, scheduler: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] _ in
-                // TODO: sink directly into subject 🤔
-                self?.actionSubject.send(())
+            .receive(on: RunLoop.main)
+            .delay(for: 2, scheduler: RunLoop.main)
+            .sink(receiveValue: { [weak self] result in
+                self?.loadingSubject.send(false)
+                
+                switch result {
+                case .success(let output): self?.valueSubject.send(output)
+                case .failure(let error): self?.errorSubject.send(error)
+                }
             })
             .store(in: &cancellables)
+    }
+}
+
+extension AnyPublisher {
+        
+    // ❗️ beware when using `catch(_)` as it will cancel original upstream
+    func mapSingleResult() -> AnyPublisher<Result<Output, Failure>, Never> {
+        return self
+            .map { Result<Output, Failure>.success($0) }
+            .catch { error in Just(Result<Output, Failure>.failure(error)) }
+            .eraseToAnyPublisher()
     }
 }
 
