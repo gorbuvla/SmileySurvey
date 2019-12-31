@@ -17,6 +17,8 @@ struct SurveyGridView: View {
     @State private var showsAddNewSurvey: Bool = false
     @State private var isPresented = false
     
+    @State private var showModal = false
+    
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
     }
@@ -29,14 +31,12 @@ struct SurveyGridView: View {
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
-//        .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
-//            SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
-//        })
-            .popover(isPresented: self.$isPresented) {
+            // for debug purposes
+        .popover(isPresented: self.$isPresented) {
             ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
                 .environmentObject(self.rotationObserver)
         }
-        .popover(isPresented: self.$viewModel.showing) {
+        .sheet(isPresented: self.$viewModel.showing) {
             SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!))
                 .environmentObject(self.rotationObserver)
         }
@@ -63,14 +63,11 @@ struct SurveyGridView: View {
         get {
             HStack {
                 NavigationLink(destination: SurveyFormView()) {
-                    Image.new
+                    Image.new.font(.title) // TODO: so that icons are pressable... revert later
                 }
                 Button(action: { self.isPresented.toggle() }) {
-                    Image.reload
+                    Image.reload.font(.title) // TODO: so that icons are pressable... revert later
                 }
-//                NavigationLink(destination: ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))) {
-//                    Image.reload
-//                }
             }
         }
     }
@@ -87,5 +84,40 @@ struct SurveyGridView: View {
 struct SurveyGridView_Previews: PreviewProvider {
     static var previews: some View {
         SurveyGridView()
+    }
+}
+
+struct ActionSheetConfigurator: UIViewControllerRepresentable {
+    var configure: (UIViewController) -> Void = { _ in }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) -> UIViewController {
+        UIViewController()
+    }
+
+    func updateUIViewController(
+        _ uiViewController: UIViewController,
+        context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) {
+        
+        guard let vc = uiViewController.presentedViewController else { return }
+        self.configure(vc)
+//        if let actionSheet = uiViewController.presentedViewController as? UIAlertController,
+//        actionSheet.preferredStyle == .actionSheet {
+//            self.configure(actionSheet)
+//        }
+    }
+}
+
+struct ActionSheetCustom: ViewModifier {
+
+    func body(content: Content) -> some View {
+        content
+            .background(ActionSheetConfigurator { action in
+                // change the text color
+                action.view.backgroundColor = UIColor.yellow
+                action.view.tintColor = UIColor.red
+                
+                action.navigationController?.navigationBar.barTintColor = UIColor.green
+                action.navigationController?.navigationBar.tintColor = UIColor.yellow
+            })
     }
 }

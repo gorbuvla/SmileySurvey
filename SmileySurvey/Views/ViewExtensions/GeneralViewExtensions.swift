@@ -20,3 +20,10 @@ extension View {
         return self.padding(.all, 8)
     }
 }
+
+extension View {
+    
+    func fullSpace() -> some View {
+        return self.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
+    }
+}

@@ -179,6 +179,7 @@
 		C206D7CE23788969007D59D3 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0F523BB85FD0007A140 /* Test */,
 				C206D7CF23788985007D59D3 /* Survey */,
 			);
 			path = Flows;
@@ -275,10 +276,7 @@
 		C24B08B4238085CB0062AD81 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				C24B08B5238085E40062AD81 /* ModalTest.swift */,
 				C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */,
-				C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */,
-				C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */,
 				C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */,
 			);
 			path = Modal;
@@ -341,6 +339,16 @@
 			children = (
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		C2A3E0F523BB85FD0007A140 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C2246A1F2392C9B1008C3C60 /* ModalPresentable.swift */,
+				C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */,
+				C24B08B5238085E40062AD81 /* ModalTest.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {

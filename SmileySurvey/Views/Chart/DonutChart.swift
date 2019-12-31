@@ -38,6 +38,7 @@ struct DonutChart: View {
                 }
             }
         }
+        .aspectRatio(1, contentMode: .fit)
     }
     
     private static func computeSegments(for rect: CGRect, with data: ChartRating) -> [DonutSegment] {

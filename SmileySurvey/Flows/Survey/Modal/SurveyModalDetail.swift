@@ -10,46 +10,101 @@ import SwiftUI
 
 struct SurveyModalDetail: View {
     
-    @State private var active: Bool = false
+    @State private var active = false
     
-    @EnvironmentObject var rotationObserver: RotationObserver
+    @EnvironmentObject private var rotationObserver: RotationObserver
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var viewModel: ModalDetailViewModel
     
     var body: some View {
         NavigationView {
-        ZStack(alignment: .init(horizontal: .center, vertical: .center)) {
-            Rectangle()
-                .foregroundColor(Color.blue.opacity(0.1))
-                .background(Color.white)
-            
-            if rotationObserver.isPortrait {
-                portraitView
-            } else {
-                landscapeView
+            ZStack(alignment: .init(horizontal: .center, vertical: .center)) {
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color.blue.opacity(0.1))
+                    .background(Color.white)
+                    .edgesIgnoringSafeArea(.all) // a hack to draw under navbar
+                    
+                VStack {
+                    if rotationObserver.isPortrait {
+                        portraitView
+                    } else {
+                        landscapeView
+                    }
+                }
+                .smallPadding()
+                .navigationBarItems(trailing: trailingItems)
+                .padding([.bottom], 60) // to center containing view (iPhone sheets in portrait have large navBar)
             }
         }
+        .background(Color.clear)
+        .navigationViewStyle(StackNavigationViewStyle())
+        .loading(isLoading: $viewModel.loading)
+        .fullSpace()
         .overlay(
-            RoundedRectangle(cornerRadius: 16)
+            RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
-        .cornerRadius(16)
-            .navigationBarItems(trailing: Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
-                Image.reload
-            })
-        }
-        .popover(isPresented: self.$active) {
+        .popover(isPresented: $active) {
             ActiveSurveyView(viewModel: factories.activeSurveyViewModel(self.viewModel.survey))
                 .environmentObject(self.rotationObserver)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
-            .onReceive(viewModel.completion) { self.presentationMode.wrappedValue.dismiss() }
-        //.aspectRatio(0.75, contentMode: .fit)
+        .onReceive(viewModel.completion) { self.presentationMode.wrappedValue.dismiss() }
+    }
+    
+    private var trailingItems: some View {
+        Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+            Text(L10n.General.done)
+        }
     }
     
     private var portraitView: some View {
-        HStack {
+        VStack {
+            DonutChart(data: self.viewModel.survey.chartData)
+                    .padding()
+            
+            Text(self.viewModel.survey.name)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            
+            Text(self.viewModel.survey.question)
+                .font(.subheadline)
+                .fontWeight(.heavy)
+                .foregroundColor(.primary)
+                
+            
+            Text(L10n.Survey.Item.correspondents(self.viewModel.survey.totalCorrespondents).uppercased())
+                .font(.caption)
+                .foregroundColor(.secondary)
+                
+            Button(action: {  }) {
+                HStack {
+                    Image(systemName: "hand.thumbsup")
+                    
+                    Text(L10n.Survey.Detail.start)
+                        .fontWeight(.bold)
+                        .font(.title)
+                }
+                .foregroundColor(.white)
+                .roundedBackground(.green)
+            }
+            
+            Button(action: { self.viewModel.delete() }) {
+                HStack {
+                    Image(systemName: "trash")
+                    
+                    Text(L10n.Survey.Detail.delete)
+                        .font(.title)
+                        .fontWeight(.bold)
+                }
+                .foregroundColor(.white)
+                .roundedBackground(.red)
+            }
+        }.smallPadding()
+    }
+    
+    private var landscapeView: some View {
+        HStack(alignment: VerticalAlignment.center) {
             DonutChart(data: self.viewModel.survey.chartData)
                 .padding()
         
@@ -63,25 +118,46 @@ struct SurveyModalDetail: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.primary)
                 
-                Text("Number of corrspondents: \(self.viewModel.survey.totalCorrespondents)".uppercased())
+                Text(L10n.Survey.Item.correspondents(self.viewModel.survey.totalCorrespondents).uppercased())
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
-                Button(action: { self.active.toggle() }) {
-                    Text("Start")
+                Button(action: {  }) {
+                    HStack {
+                        Image(systemName: "hand.thumbsup")
+                        
+                        Text(L10n.Survey.Detail.start)
+                            .fontWeight(.bold)
+                            .font(.title)
+                    }
+                    .foregroundColor(.white)
+                    .roundedBackground(.green)
                 }
                 
                 Button(action: { self.viewModel.delete() }) {
-                    Text("Delete")
+                    HStack {
+                        Image(systemName: "trash")
+                        
+                        Text(L10n.Survey.Detail.delete)
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                    .foregroundColor(.white)
+                    .roundedBackground(.red)
                 }
             }
-        }.largePadding()
+        }.smallPadding()
     }
+}
+
+fileprivate extension View {
     
-    private var landscapeView: some View {
-        HStack {
-            Text("Ogo2")
-        }
+    func roundedBackground(_ color: Color) -> some View {
+        return self
+            .padding([.horizontal], 20)
+            .padding([.vertical], 10)
+            .background(color)
+            .cornerRadius(20)
     }
 }
 

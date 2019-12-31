@@ -18,7 +18,6 @@ struct SurveyGridItemView: View {
             
             VStack {
                 DonutChart(data: survey.chartData)
-                    .padding()
                 
                 HStack {
                     VStack(alignment: .leading) {
@@ -31,14 +30,14 @@ struct SurveyGridItemView: View {
                             .fontWeight(.heavy)
                             .foregroundColor(.primary)
                         
-                        Text(L10n.Survey.Grid.Item.correspondents(survey.totalCorrespondents).uppercased())
+                        Text(L10n.Survey.Item.correspondents(survey.totalCorrespondents).uppercased())
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }.layoutPriority(100)
                     
                     Spacer()
-                }.padding()
-            }
+                }
+            }.padding()
         }
         .overlay(
             RoundedRectangle(cornerRadius: 16)

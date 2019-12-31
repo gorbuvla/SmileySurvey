@@ -7,11 +7,15 @@
 */
 "app.name" = "SmileySurvey";
 
+// General
+
+"general.done" = "Done";
+
 // Main view, survey grid
 
 "survey.grid.title" = "Surveys";
 "survey.grid.empty" = "No surveys yet";
-"survey.grid.item.correspondents" = "Number of correspondents: %d";
+"survey.item.correspondents" = "Number of correspondents: %d";
 
 // New Survey Form
 
@@ -22,3 +26,8 @@
 "survey.form.question.hint" = "Survey question";
 "survey.form.question.error" = "Most not be empty";
 "survey.form.create" = "Create survey";
+
+// Survey detail
+
+"survey.detail.start" = "Start";
+"survey.detail.delete" = "Delete";
