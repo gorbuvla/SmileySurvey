@@ -18,7 +18,7 @@ struct ModalPresentableI<SourceView: View, TargetView: View>: View {
         GeometryReader { geometry in
             ZStack {
                 self.sourceFactory()
-                    //.disabled(self.isPresenting)
+                    .disabled(self.isPresenting)
                     .blur(radius: self.isPresenting ? 3 : 0)
                 
                 if self.isPresenting {

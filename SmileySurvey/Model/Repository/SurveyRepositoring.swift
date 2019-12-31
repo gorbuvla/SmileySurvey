@@ -11,6 +11,7 @@ protocol SurveyRepositoring {
     // TODO - check for possible errors
     func observeSurveys() -> AnyPublisher<[Survey], Never>
     
-    func createSurvey(survey: Survey) -> AnyPublisher<(), Never>
+    func create(survey: Survey) -> AnyPublisher<(), Never>
     
+    func delete(survey: Survey) -> AnyPublisher<(), Never>
 }

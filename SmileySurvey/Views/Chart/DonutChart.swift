@@ -15,6 +15,17 @@ struct ChartRating {
     let disaster: Int
 }
 
+fileprivate extension ChartRating {
+    
+    var votes: Int {
+        excellent + good + bad + disaster
+    }
+    
+    var ratingData: [(Int, Color)] {
+        votes == 0 ? [(1, Color.ratingEmpty)] : [(disaster, Color.ratingDisaster), (bad, Color.ratingBad), (good, Color.ratingGood), (excellent, Color.ratingExcellent)]
+    }
+}
+
 struct DonutChart: View {
 
     let data: ChartRating
@@ -27,10 +38,11 @@ struct DonutChart: View {
                 }
             }
         }
+        .aspectRatio(1, contentMode: .fit)
     }
     
     private static func computeSegments(for rect: CGRect, with data: ChartRating) -> [DonutSegment] {
-        let arrayData = [(data.disaster, Color.ratingDisaster), (data.bad, Color.ratingBad), (data.good, Color.ratingGood), (data.excellent, Color.ratingExcellent)]
+        let arrayData = data.ratingData
         let total = arrayData.map { (value, _) in value }.reduce(0, +) // 😱 so cool
         let degreesPerPoint = 360.0 / Double(total)
         let radius = min(rect.width, rect.height) / 2

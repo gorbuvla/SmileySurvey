@@ -11,17 +11,36 @@ import Foundation
 
 final class MockedSurveyRepository: SurveyRepositoring {
     
-    func observeSurveys() -> AnyPublisher<[Survey], Never> {
-        let surveys = (1...10).map { number in
-            Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
-        }
-        
-        return Just(surveys).eraseToAnyPublisher()
+    private static let initialSurveys = (1...10).map { number in
+        Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
     }
     
-    func createSurvey(survey: Survey) -> AnyPublisher<(), Never> {
-        return Just(())
-            .delay(for: 2, scheduler: DispatchQueue.main)
-            .eraseToAnyPublisher()
+    private let surveysSubject = CurrentValueSubject<[Survey], Never>(initialSurveys)
+    
+    func observeSurveys() -> AnyPublisher<[Survey], Never> {
+        return surveysSubject.eraseToAnyPublisher()
+    }
+    
+    func create(survey: Survey) -> AnyPublisher<(), Never> {
+        return Deferred {
+            Future<(), Never> { promise in
+                let surveys = self.surveysSubject.value + [survey]
+                self.surveysSubject.send(surveys)
+                
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func delete(survey: Survey) -> AnyPublisher<(), Never> {
+        return Deferred {
+            Future<(), Never> { promise in
+                let surveys = self.surveysSubject.value.filter { item in item.id != survey.id }
+                
+                self.surveysSubject.send(surveys)
+                
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
     }
 }

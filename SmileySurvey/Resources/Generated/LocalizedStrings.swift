@@ -17,7 +17,18 @@ internal enum L10n {
     internal static let name = L10n.tr("Localizable", "app.name")
   }
 
+  internal enum General {
+    /// Done
+    internal static let done = L10n.tr("Localizable", "general.done")
+  }
+
   internal enum Survey {
+    internal enum Detail {
+      /// Delete
+      internal static let delete = L10n.tr("Localizable", "survey.detail.delete")
+      /// Start
+      internal static let start = L10n.tr("Localizable", "survey.detail.start")
+    }
     internal enum Form {
       /// Create survey
       internal static let create = L10n.tr("Localizable", "survey.form.create")
@@ -43,11 +54,11 @@ internal enum L10n {
       internal static let empty = L10n.tr("Localizable", "survey.grid.empty")
       /// Surveys
       internal static let title = L10n.tr("Localizable", "survey.grid.title")
-      internal enum Item {
-        /// Number of correspondents: %d
-        internal static func correspondents(_ p1: Int) -> String {
-          return L10n.tr("Localizable", "survey.grid.item.correspondents", p1)
-        }
+    }
+    internal enum Item {
+      /// Number of correspondents: %d
+      internal static func correspondents(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "survey.item.correspondents", p1)
       }
     }
   }

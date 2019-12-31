@@ -12,25 +12,33 @@ import Grid
 struct SurveyGridView: View {
         
     @EnvironmentObject var rotationObserver: RotationObserver
+    @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     @State private var showsAddNewSurvey: Bool = false
-    @ObservedObject var viewModel = factories.surveyGridViewModel()
+    @State private var isPresented = false
+    
+    @State private var showModal = false
     
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
     }
     
     var body: some View {
-        LoadingView(isLoading: $viewModel.loading) {
-            NavigationView {
-                self.listContent
-                    .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
-                    .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-            .modalPresentalbe(isPresenting: self.$viewModel.showing, modalFactory: {
-                SurveyModalDetail(survey: self.viewModel.selectedSurvey!)
-            })
+        NavigationView {
+            self.listContent
+                .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
+                .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
+        }
+        .loading(isLoading: $viewModel.loading)
+        .navigationViewStyle(StackNavigationViewStyle())
+            // for debug purposes
+        .popover(isPresented: self.$isPresented) {
+            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
+                .environmentObject(self.rotationObserver)
+        }
+        .sheet(isPresented: self.$viewModel.showing) {
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!))
+                .environmentObject(self.rotationObserver)
         }
     }
 
@@ -53,8 +61,13 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            NavigationLink(destination: SurveyFormView()) {
-                Image.new
+            HStack {
+                NavigationLink(destination: SurveyFormView()) {
+                    Image.new.font(.title) // TODO: so that icons are pressable... revert later
+                }
+                Button(action: { self.isPresented.toggle() }) {
+                    Image.reload.font(.title) // TODO: so that icons are pressable... revert later
+                }
             }
         }
     }
@@ -71,5 +84,40 @@ struct SurveyGridView: View {
 struct SurveyGridView_Previews: PreviewProvider {
     static var previews: some View {
         SurveyGridView()
+    }
+}
+
+struct ActionSheetConfigurator: UIViewControllerRepresentable {
+    var configure: (UIViewController) -> Void = { _ in }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) -> UIViewController {
+        UIViewController()
+    }
+
+    func updateUIViewController(
+        _ uiViewController: UIViewController,
+        context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) {
+        
+        guard let vc = uiViewController.presentedViewController else { return }
+        self.configure(vc)
+//        if let actionSheet = uiViewController.presentedViewController as? UIAlertController,
+//        actionSheet.preferredStyle == .actionSheet {
+//            self.configure(actionSheet)
+//        }
+    }
+}
+
+struct ActionSheetCustom: ViewModifier {
+
+    func body(content: Content) -> some View {
+        content
+            .background(ActionSheetConfigurator { action in
+                // change the text color
+                action.view.backgroundColor = UIColor.yellow
+                action.view.tintColor = UIColor.red
+                
+                action.navigationController?.navigationBar.barTintColor = UIColor.green
+                action.navigationController?.navigationBar.tintColor = UIColor.yellow
+            })
     }
 }

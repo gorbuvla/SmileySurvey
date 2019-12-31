@@ -17,6 +17,8 @@ extension Color {
     static let ratingGood = Color(hex: "97CE71")
     
     static let ratingExcellent = Color(hex: "049D30")
+    
+    static let ratingEmpty = Color(hex: "CCCCCC")
 }
 
 extension Color {

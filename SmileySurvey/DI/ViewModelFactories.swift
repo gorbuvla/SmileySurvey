@@ -23,6 +23,14 @@ final class ViewModelFactories {
     var surveyFormViewModel: () -> SurveyFormViewModel {
         return { SurveyFormViewModel(repository: self.dependencies.surveyRepository) }
     }
+    
+    var activeSurveyViewModel: (Survey) -> ActiveSurveyViewModel {
+        return { survey in ActiveSurveyViewModel(survey, repository: self.dependencies.surveyRepository) }
+    }
+    
+    var modalDetailViewModel: (Survey) -> ModalDetailViewModel {
+        return { survey in ModalDetailViewModel(survey, repository: self.dependencies.surveyRepository) }
+    }
 }
 
 let factories = ViewModelFactories(modelDependency: ModelDependency())
