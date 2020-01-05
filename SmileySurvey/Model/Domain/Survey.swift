@@ -20,3 +20,10 @@ struct Survey: Identifiable {
         get { excellent + good + bad + disaster }
     }
 }
+
+extension DbSurvey {
+    
+    func toDomainSurvey() throws -> Survey {
+        return Survey(name: name!, question: question!, excellent: Int(excellent), good: Int(good), bad: Int(bad), disaster: Int(disaster))
+    }
+}

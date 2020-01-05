@@ -44,6 +44,9 @@
 		C2A3E0EB23B4F6020007A140 /* GeneralViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EA23B4F6020007A140 /* GeneralViewExtensions.swift */; };
 		C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */; };
 		C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */; };
+		C2A3E0FA23BB972E0007A140 /* DbSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */; };
+		C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FB23BB97D80007A140 /* Database.swift */; };
+		C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -101,6 +104,10 @@
 		C2A3E0EA23B4F6020007A140 /* GeneralViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewExtensions.swift; sourceTree = "<group>"; };
 		C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetailViewModel.swift; sourceTree = "<group>"; };
+		C2A3E0F623BB96B20007A140 /* SmileySurvey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmileySurvey.entitlements; sourceTree = "<group>"; };
+		C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DbSurvey.xcdatamodel; sourceTree = "<group>"; };
+		C2A3E0FB23BB97D80007A140 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSurveyRepository.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 		C206D7A8237888BE007D59D3 /* SmileySurvey */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0F623BB96B20007A140 /* SmileySurvey.entitlements */,
 				C2246A212392D09D008C3C60 /* DI */,
 				C207E0612380976A00F59D1A /* Views */,
 				C206D7D6237889EB007D59D3 /* Model */,
@@ -209,6 +217,7 @@
 		C206D7D6237889EB007D59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0F723BB96EC0007A140 /* CoreData */,
 				C2A3E0EE23B6367C0007A140 /* Action */,
 				C2A3E0E423B3D8A90007A140 /* Environment */,
 				C206D7DA23788A37007D59D3 /* Domain */,
@@ -223,6 +232,7 @@
 			children = (
 				C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */,
 				C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */,
+				C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -349,6 +359,15 @@
 				C24B08B5238085E40062AD81 /* ModalTest.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		C2A3E0F723BB96EC0007A140 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */,
+				C2A3E0FB23BB97D80007A140 /* Database.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {
@@ -509,6 +528,8 @@
 				C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C2A3E0E823B3E76F0007A140 /* ActiveSurveyViewModel.swift in Sources */,
+				C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */,
+				C2A3E0FA23BB972E0007A140 /* DbSurvey.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
@@ -529,6 +550,7 @@
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */,
+				C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */,
 				C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */,
 				C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */,
 				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
@@ -690,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmileySurvey/SmileySurvey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
@@ -710,6 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmileySurvey/SmileySurvey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
@@ -829,6 +853,16 @@
 			);
 			currentVersion = C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */;
 			path = SmileSurvey.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */,
+			);
+			currentVersion = C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */;
+			path = DbSurvey.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
