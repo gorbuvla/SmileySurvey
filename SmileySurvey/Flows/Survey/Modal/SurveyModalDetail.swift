@@ -77,7 +77,7 @@ struct SurveyModalDetail: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
                 
-            Button(action: {  }) {
+            Button(action: { self.active.toggle() }) {
                 HStack {
                     Image(systemName: "hand.thumbsup")
                     
@@ -122,7 +122,7 @@ struct SurveyModalDetail: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
-                Button(action: {  }) {
+                Button(action: { self.active.toggle() }) {
                     HStack {
                         Image(systemName: "hand.thumbsup")
                         

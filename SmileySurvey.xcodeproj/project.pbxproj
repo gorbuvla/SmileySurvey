@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7A9237888BE007D59D3 /* AppDelegate.swift */; };
 		C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AB237888BE007D59D3 /* SceneDelegate.swift */; };
-		C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */; };
 		C206D7B3237888C3007D59D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B2237888C3007D59D3 /* Assets.xcassets */; };
 		C206D7B6237888C3007D59D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */; };
 		C206D7B9237888C3007D59D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */; };
@@ -31,6 +30,7 @@
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
+		C26D447B23D35BDF00E7E268 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26D447A23D35BDF00E7E268 /* Action.swift */; };
 		C2A3E0BA23B3B45C0007A140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0B923B3B45C0007A140 /* Localizable.strings */; };
 		C2A3E0BD23B3B5180007A140 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0BC23B3B5180007A140 /* colors.json */; };
 		C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */; };
@@ -44,6 +44,9 @@
 		C2A3E0EB23B4F6020007A140 /* GeneralViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EA23B4F6020007A140 /* GeneralViewExtensions.swift */; };
 		C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */; };
 		C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */; };
+		C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */; };
+		C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FB23BB97D80007A140 /* Database.swift */; };
+		C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -64,7 +67,6 @@
 		C206D7A6237888BE007D59D3 /* SmileySurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileySurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206D7A9237888BE007D59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C206D7AB237888BE007D59D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmileSurvey.xcdatamodel; sourceTree = "<group>"; };
 		C206D7B2237888C3007D59D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C206D7B8237888C3007D59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentableI.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
+		C26D447A23D35BDF00E7E268 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		C2A3E0B923B3B45C0007A140 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2A3E0BC23B3B5180007A140 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 		C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResources.swift; sourceTree = "<group>"; };
@@ -101,6 +104,10 @@
 		C2A3E0EA23B4F6020007A140 /* GeneralViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewExtensions.swift; sourceTree = "<group>"; };
 		C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDetailViewModel.swift; sourceTree = "<group>"; };
+		C2A3E0F623BB96B20007A140 /* SmileySurvey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmileySurvey.entitlements; sourceTree = "<group>"; };
+		C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DbSurvey.xcdatamodel; sourceTree = "<group>"; };
+		C2A3E0FB23BB97D80007A140 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSurveyRepository.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -147,13 +154,13 @@
 		C206D7A8237888BE007D59D3 /* SmileySurvey */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0F623BB96B20007A140 /* SmileySurvey.entitlements */,
 				C2246A212392D09D008C3C60 /* DI */,
 				C207E0612380976A00F59D1A /* Views */,
 				C206D7D6237889EB007D59D3 /* Model */,
 				C206D7CE23788969007D59D3 /* Flows */,
 				C2A3E0B823B3B42A0007A140 /* Resources */,
 				C2A3E0E123B3D73C0007A140 /* App */,
-				C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */,
 				C206D7B4237888C3007D59D3 /* Preview Content */,
 			);
 			path = SmileySurvey;
@@ -209,6 +216,7 @@
 		C206D7D6237889EB007D59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2A3E0F723BB96EC0007A140 /* CoreData */,
 				C2A3E0EE23B6367C0007A140 /* Action */,
 				C2A3E0E423B3D8A90007A140 /* Environment */,
 				C206D7DA23788A37007D59D3 /* Domain */,
@@ -223,6 +231,7 @@
 			children = (
 				C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */,
 				C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */,
+				C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 		C2A3E0EE23B6367C0007A140 /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				C26D447A23D35BDF00E7E268 /* Action.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -349,6 +359,15 @@
 				C24B08B5238085E40062AD81 /* ModalTest.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		C2A3E0F723BB96EC0007A140 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */,
+				C2A3E0FB23BB97D80007A140 /* Database.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C2C01AC9239D47E10006FC8C /* Form */ = {
@@ -505,10 +524,11 @@
 			files = (
 				C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */,
 				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
-				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C2A3E0E823B3E76F0007A140 /* ActiveSurveyViewModel.swift in Sources */,
+				C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */,
+				C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
@@ -516,6 +536,7 @@
 				C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */,
 				C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */,
 				C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */,
+				C26D447B23D35BDF00E7E268 /* Action.swift in Sources */,
 				C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */,
 				C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */,
 				C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */,
@@ -529,6 +550,7 @@
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */,
+				C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */,
 				C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */,
 				C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */,
 				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
@@ -690,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmileySurvey/SmileySurvey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
@@ -710,6 +733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmileySurvey/SmileySurvey.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SmileySurvey/Preview Content\"";
 				DEVELOPMENT_TEAM = P88J5J9T9W;
@@ -822,13 +846,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */ = {
+		C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */,
+				C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */,
 			);
-			currentVersion = C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */;
-			path = SmileSurvey.xcdatamodeld;
+			currentVersion = C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

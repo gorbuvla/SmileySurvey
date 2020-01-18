@@ -16,7 +16,6 @@ struct SurveyGridView: View {
     
     @State private var showsAddNewSurvey: Bool = false
     @State private var isPresented = false
-    
     @State private var showModal = false
     
     private var tracksCount: Tracks {
@@ -27,7 +26,7 @@ struct SurveyGridView: View {
         NavigationView {
             self.listContent
                 .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
-                .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
+                .navigationBarItems(trailing: self.trailingNavItem)
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -71,53 +70,10 @@ struct SurveyGridView: View {
             }
         }
     }
-    
-    private var leadingNavItem: some View {
-        get {
-             Button(action: { self.viewModel.reload() }) {
-                Image.reload
-            }
-        }
-    }
 }
 
 struct SurveyGridView_Previews: PreviewProvider {
     static var previews: some View {
         SurveyGridView()
-    }
-}
-
-struct ActionSheetConfigurator: UIViewControllerRepresentable {
-    var configure: (UIViewController) -> Void = { _ in }
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) -> UIViewController {
-        UIViewController()
-    }
-
-    func updateUIViewController(
-        _ uiViewController: UIViewController,
-        context: UIViewControllerRepresentableContext<ActionSheetConfigurator>) {
-        
-        guard let vc = uiViewController.presentedViewController else { return }
-        self.configure(vc)
-//        if let actionSheet = uiViewController.presentedViewController as? UIAlertController,
-//        actionSheet.preferredStyle == .actionSheet {
-//            self.configure(actionSheet)
-//        }
-    }
-}
-
-struct ActionSheetCustom: ViewModifier {
-
-    func body(content: Content) -> some View {
-        content
-            .background(ActionSheetConfigurator { action in
-                // change the text color
-                action.view.backgroundColor = UIColor.yellow
-                action.view.tintColor = UIColor.red
-                
-                action.navigationController?.navigationBar.barTintColor = UIColor.green
-                action.navigationController?.navigationBar.tintColor = UIColor.yellow
-            })
     }
 }

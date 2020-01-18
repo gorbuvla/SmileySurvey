@@ -7,23 +7,24 @@
 //
 
 import Foundation
-
-enum Reaction {
-    case disaster
-    case bad
-    case good
-    case excellent
-}
+import Combine
 
 class ActiveSurveyViewModel: ObservableObject {
     
     let survey: Survey
     private let repository: SurveyRepositoring
+    private var cancellables = Set<AnyCancellable>()
     
     init(_ survey: Survey, repository: SurveyRepositoring) {
         self.survey = survey
         self.repository = repository
     }
     
-    func submit(reaction: Reaction) {}
+    func submit(reaction: Rating) {
+        repository.update(survey, rating: reaction)
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { err in }, receiveValue: {})
+            .store(in: &cancellables)
+    }
 }

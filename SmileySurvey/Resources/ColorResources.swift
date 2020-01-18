@@ -14,9 +14,9 @@ extension Color {
     
     static let ratingBad = Color(hex: "F37D7F")
     
-    static let ratingGood = Color(hex: "97CE71")
+    static let ratingGood = Color(hex: "049D30")
     
-    static let ratingExcellent = Color(hex: "049D30")
+    static let ratingExcellent = Color(hex: "97CE71")
     
     static let ratingEmpty = Color(hex: "CCCCCC")
 }

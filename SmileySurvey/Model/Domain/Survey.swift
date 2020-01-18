@@ -8,7 +8,7 @@
 import Foundation
 
 struct Survey: Identifiable {
-    let id = UUID()
+    var id: UUID = UUID()
     let name: String
     let question: String
     var excellent: Int = 0

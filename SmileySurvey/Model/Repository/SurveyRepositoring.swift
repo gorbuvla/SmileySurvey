@@ -8,10 +8,19 @@
 import Combine
 
 protocol SurveyRepositoring {
-    // TODO - check for possible errors
-    func observeSurveys() -> AnyPublisher<[Survey], Never>
     
-    func create(survey: Survey) -> AnyPublisher<(), Never>
+    func create(survey: Survey) -> AnyPublisher<(), Error>
     
-    func delete(survey: Survey) -> AnyPublisher<(), Never>
+    func observe() -> AnyPublisher<[Survey], Never>
+    
+    func update(_ survey: Survey, rating: Rating) -> AnyPublisher<(), Error>
+    
+    func delete(survey: Survey) -> AnyPublisher<(), Error>
+}
+
+enum Rating {
+    case excellent
+    case good
+    case bad
+    case disaster
 }

@@ -25,19 +25,13 @@ final class SurveyGridViewModel: ObservableObject {
         bindUpdates()
     }
     
-    func reload() {
-        surveys = (1...20).map { number in
-            Survey(name: "Survey \(number) 🤔", question: "How was your meal?", excellent: 858, good: 358, bad: 115, disaster: 100)
-        }
-    }
-    
     func select(survey: Survey) {
         showing = true
         selectedSurvey = survey
     }
     
     private func bindUpdates() {
-        repository.observeSurveys()
+        repository.observe()
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .delay(for: 2.0, scheduler: DispatchQueue.main)
