@@ -31,7 +31,7 @@ final class SurveyGridViewModel: ObservableObject {
     }
     
     private func bindUpdates() {
-        repository.observe()
+        repository.observe(filter: .all)
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .delay(for: 2.0, scheduler: DispatchQueue.main)

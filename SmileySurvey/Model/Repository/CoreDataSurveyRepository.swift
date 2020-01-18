@@ -49,6 +49,20 @@ final class CoreDataSurveyRepository: SurveyRepositoring {
         }.eraseToAnyPublisher()
     }
     
+    func observe(filter: FilterOption) -> AnyPublisher<[Survey], Never> {
+        return collector.subject
+            .map {
+                $0.compactMap { dbSurvey in dbSurvey.toDomain() }
+                    .filter { survey in
+                        if case .single(let id) = filter {
+                            return survey.id == id
+                        } else {
+                            return true
+                        }
+                    }
+            }.eraseToAnyPublisher()
+    }
+    
     func observe() -> AnyPublisher<[Survey], Never> {
         return collector.subject
             .map { $0.compactMap { dbSurvey in dbSurvey.toDomain() }}

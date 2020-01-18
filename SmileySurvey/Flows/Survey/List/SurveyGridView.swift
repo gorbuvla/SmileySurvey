@@ -36,7 +36,7 @@ struct SurveyGridView: View {
                 .environmentObject(self.rotationObserver)
         }
         .sheet(isPresented: self.$viewModel.showing) {
-            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!))
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!.id))
                 .environmentObject(self.rotationObserver)
         }
     }

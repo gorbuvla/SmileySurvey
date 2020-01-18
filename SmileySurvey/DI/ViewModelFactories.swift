@@ -28,8 +28,8 @@ final class ViewModelFactories {
         return { survey in ActiveSurveyViewModel(survey, repository: self.dependencies.surveyRepository) }
     }
     
-    var modalDetailViewModel: (Survey) -> ModalDetailViewModel {
-        return { survey in ModalDetailViewModel(survey, repository: self.dependencies.surveyRepository) }
+    var modalDetailViewModel: (UUID) -> ModalDetailViewModel {
+        return { surveyId in ModalDetailViewModel(surveyId, repository: self.dependencies.surveyRepository) }
     }
 }
 
