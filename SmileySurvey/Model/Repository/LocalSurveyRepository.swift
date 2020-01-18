@@ -17,6 +17,19 @@ final class MockedSurveyRepository: SurveyRepositoring {
     
     private let surveysSubject = CurrentValueSubject<[Survey], Never>(initialSurveys)
     
+    func observe(filter: FilterOption) -> AnyPublisher<[Survey], Never> {
+        return surveysSubject
+            .map {
+                $0.filter { survey in
+                    if case .single(let id) = filter {
+                        return survey.id == id
+                    } else {
+                        return true
+                    }
+                }
+            }.eraseToAnyPublisher()
+    }
+    
     func observe() -> AnyPublisher<[Survey], Never> {
         return surveysSubject.eraseToAnyPublisher()
     }
