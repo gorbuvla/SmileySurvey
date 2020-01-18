@@ -64,7 +64,7 @@ struct SurveyGridView: View {
                 NavigationLink(destination: SurveyFormView()) {
                     Image.new.font(.title) // TODO: so that icons are pressable... revert later
                 }
-                Button(action: { self.isPresented = true }) {
+                Button(action: { self.isPresented.toggle() }) {
                     Image.reload.font(.title) // TODO: so that icons are pressable... revert later
                 }
             }

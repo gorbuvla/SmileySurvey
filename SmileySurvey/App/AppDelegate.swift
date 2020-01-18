@@ -80,9 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 final class NSSharedPersistentContainer: NSPersistentContainer {
     
     override class func defaultDirectoryURL() -> URL {
-        var storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.me.gorbuvla.SmileySurvey")
-        //storeURL = storeURL?.appendingPathComponent("MovieGo.sqlite")
-        return storeURL!
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.me.gorbuvla.SmileySurvey")!
     }
 }
 

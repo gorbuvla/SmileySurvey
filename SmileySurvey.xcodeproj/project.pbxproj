@@ -30,6 +30,7 @@
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */; };
 		C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B08B5238085E40062AD81 /* ModalTest.swift */; };
+		C26D447B23D35BDF00E7E268 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26D447A23D35BDF00E7E268 /* Action.swift */; };
 		C2A3E0BA23B3B45C0007A140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0B923B3B45C0007A140 /* Localizable.strings */; };
 		C2A3E0BD23B3B5180007A140 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0BC23B3B5180007A140 /* colors.json */; };
 		C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */; };
@@ -89,6 +90,7 @@
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C2246A262393EFF3008C3C60 /* ModalPresentableI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentableI.swift; sourceTree = "<group>"; };
 		C24B08B5238085E40062AD81 /* ModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTest.swift; sourceTree = "<group>"; };
+		C26D447A23D35BDF00E7E268 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		C2A3E0B923B3B45C0007A140 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2A3E0BC23B3B5180007A140 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 		C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResources.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		C2A3E0EE23B6367C0007A140 /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				C26D447A23D35BDF00E7E268 /* Action.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */,
 				C2246A272393EFF3008C3C60 /* ModalPresentableI.swift in Sources */,
 				C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */,
+				C26D447B23D35BDF00E7E268 /* Action.swift in Sources */,
 				C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */,
 				C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */,
 				C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */,
