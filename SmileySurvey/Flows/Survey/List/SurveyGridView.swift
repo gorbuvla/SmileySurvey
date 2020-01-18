@@ -16,7 +16,6 @@ struct SurveyGridView: View {
     
     @State private var showsAddNewSurvey: Bool = false
     @State private var isPresented = false
-    
     @State private var showModal = false
     
     private var tracksCount: Tracks {
@@ -27,7 +26,7 @@ struct SurveyGridView: View {
         NavigationView {
             self.listContent
                 .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
-                .navigationBarItems(leading: self.leadingNavItem, trailing: self.trailingNavItem)
+                .navigationBarItems(trailing: self.trailingNavItem)
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -65,17 +64,9 @@ struct SurveyGridView: View {
                 NavigationLink(destination: SurveyFormView()) {
                     Image.new.font(.title) // TODO: so that icons are pressable... revert later
                 }
-                Button(action: { self.isPresented.toggle() }) {
+                Button(action: { self.isPresented = true }) {
                     Image.reload.font(.title) // TODO: so that icons are pressable... revert later
                 }
-            }
-        }
-    }
-    
-    private var leadingNavItem: some View {
-        get {
-             Button(action: { self.viewModel.reload() }) {
-                Image.reload
             }
         }
     }
