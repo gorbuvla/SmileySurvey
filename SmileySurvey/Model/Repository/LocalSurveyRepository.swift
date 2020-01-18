@@ -17,13 +17,30 @@ final class MockedSurveyRepository: SurveyRepositoring {
     
     private let surveysSubject = CurrentValueSubject<[Survey], Never>(initialSurveys)
     
-    func observeSurveys() -> AnyPublisher<[Survey], Never> {
+    func observe() -> AnyPublisher<[Survey], Never> {
         return surveysSubject.eraseToAnyPublisher()
     }
     
-    func create(survey: Survey) -> AnyPublisher<(), Never> {
+    func update(_ survey: Survey, rating: Rating) -> AnyPublisher<(), Error> {
         return Deferred {
-            Future<(), Never> { promise in
+            Future<(), Error> { promise in
+                let matched = self.surveysSubject.value.first { $0.id == survey.id }?.plus(rating: rating)
+                let others = self.surveysSubject.value.filter { $0.id != survey.id }
+                
+                if let update = matched {
+                    self.surveysSubject.send(others + [update])
+                } else {
+                    self.surveysSubject.send(others)
+                }
+                
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func create(survey: Survey) -> AnyPublisher<(), Error> {
+        return Deferred {
+            Future<(), Error> { promise in
                 let surveys = self.surveysSubject.value + [survey]
                 self.surveysSubject.send(surveys)
                 
@@ -32,9 +49,9 @@ final class MockedSurveyRepository: SurveyRepositoring {
         }.eraseToAnyPublisher()
     }
     
-    func delete(survey: Survey) -> AnyPublisher<(), Never> {
+    func delete(survey: Survey) -> AnyPublisher<(), Error> {
         return Deferred {
-            Future<(), Never> { promise in
+            Future<(), Error> { promise in
                 let surveys = self.surveysSubject.value.filter { item in item.id != survey.id }
                 
                 self.surveysSubject.send(surveys)
@@ -42,5 +59,24 @@ final class MockedSurveyRepository: SurveyRepositoring {
                 promise(.success(()))
             }
         }.eraseToAnyPublisher()
+    }
+}
+
+private extension Survey {
+    func plus(rating: Rating) -> Survey {
+        var ret = self
+        
+        switch rating {
+        case .excellent:
+            ret.excellent += 1
+        case .good:
+            ret.good += 1
+        case .bad:
+            ret.bad += 1
+        case .disaster:
+            ret.disaster += 1
+        }
+        
+        return ret
     }
 }

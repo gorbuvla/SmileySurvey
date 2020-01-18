@@ -15,7 +15,7 @@ class ModalDetailViewModel: ObservableObject {
     
     let survey: Survey
     private let repository: SurveyRepositoring
-    private let deleteAction: Action<(Survey), (), Never>
+    private let deleteAction: Action<(Survey), (), Error>
     
     @Published var loading: Bool = false
     

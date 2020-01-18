@@ -15,7 +15,7 @@ class SurveyFormViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     private let repository: SurveyRepositoring
-    private let submitAction: Action<(Survey), Void, Never>
+    private let submitAction: Action<(Survey), Void, Error>
     
     // MARK: public properties
     

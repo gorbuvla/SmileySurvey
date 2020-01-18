@@ -15,5 +15,6 @@ protocol ModelProvider {
 
 final class ModelDependency: ModelProvider {
     
-    lazy var surveyRepository: SurveyRepositoring = MockedSurveyRepository()
+    lazy var surveyRepository: SurveyRepositoring = CoreDataSurveyRepository(database: Database.shared)
+    //lazy var surveyRepository: SurveyRepositoring = MockedSurveyRepository()
 }

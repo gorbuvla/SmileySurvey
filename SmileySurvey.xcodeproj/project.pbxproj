@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7A9237888BE007D59D3 /* AppDelegate.swift */; };
 		C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AB237888BE007D59D3 /* SceneDelegate.swift */; };
-		C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */; };
 		C206D7B3237888C3007D59D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B2237888C3007D59D3 /* Assets.xcassets */; };
 		C206D7B6237888C3007D59D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */; };
 		C206D7B9237888C3007D59D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D7B7237888C3007D59D3 /* LaunchScreen.storyboard */; };
@@ -44,7 +43,7 @@
 		C2A3E0EB23B4F6020007A140 /* GeneralViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EA23B4F6020007A140 /* GeneralViewExtensions.swift */; };
 		C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EC23B4F8CE0007A140 /* ImageExtensions.swift */; };
 		C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */; };
-		C2A3E0FA23BB972E0007A140 /* DbSurvey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */; };
+		C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */; };
 		C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FB23BB97D80007A140 /* Database.swift */; };
 		C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
@@ -67,7 +66,6 @@
 		C206D7A6237888BE007D59D3 /* SmileySurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmileySurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206D7A9237888BE007D59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C206D7AB237888BE007D59D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmileSurvey.xcdatamodel; sourceTree = "<group>"; };
 		C206D7B2237888C3007D59D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C206D7B5237888C3007D59D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C206D7B8237888C3007D59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,7 +159,6 @@
 				C206D7CE23788969007D59D3 /* Flows */,
 				C2A3E0B823B3B42A0007A140 /* Resources */,
 				C2A3E0E123B3D73C0007A140 /* App */,
-				C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */,
 				C206D7B4237888C3007D59D3 /* Preview Content */,
 			);
 			path = SmileySurvey;
@@ -364,7 +361,7 @@
 		C2A3E0F723BB96EC0007A140 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */,
+				C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */,
 				C2A3E0FB23BB97D80007A140 /* Database.swift */,
 			);
 			path = CoreData;
@@ -524,12 +521,11 @@
 			files = (
 				C206D7D5237889D2007D59D3 /* SurveyGridViewModel.swift in Sources */,
 				C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */,
-				C206D7AF237888BE007D59D3 /* SmileSurvey.xcdatamodeld in Sources */,
 				C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C2A3E0E823B3E76F0007A140 /* ActiveSurveyViewModel.swift in Sources */,
 				C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */,
-				C2A3E0FA23BB972E0007A140 /* DbSurvey.xcdatamodeld in Sources */,
+				C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
@@ -846,23 +842,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		C206D7AD237888BE007D59D3 /* SmileSurvey.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */,
-			);
-			currentVersion = C206D7AE237888BE007D59D3 /* SmileSurvey.xcdatamodel */;
-			path = SmileSurvey.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		C2A3E0F823BB972E0007A140 /* DbSurvey.xcdatamodeld */ = {
+		C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */,
 			);
 			currentVersion = C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */;
-			path = DbSurvey.xcdatamodeld;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -7,13 +7,14 @@
 //
 
 import CoreData
+import UIKit
 
 final class Database {
     
     static let shared = Database()
     
     private init() {
-        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+        mainContext.automaticallyMergesChangesFromParent = true
     }
     
     var mainContext: NSManagedObjectContext {
@@ -29,13 +30,13 @@ final class Database {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSSharedPersistentContainer(name: "DbSurvey")
+        let container = NSSharedPersistentContainer(name: "Model")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             print("[STORE DESCRIPTION]", storeDescription)
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -55,14 +56,14 @@ final class Database {
     }
 }
 
-final class NSSharedPersistentContainer: NSPersistentContainer {
-    
-    override class func defaultDirectoryURL() -> URL {
-        let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.me.gorbuvla.SmileySurvey")
-        //storeURL = storeURL?.appendingPathComponent("MovieGo.sqlite")
-        return storeURL!
-    }
-}
+//final class NSSharedPersistentContainer: NSPersistentContainer {
+//
+//    override class func defaultDirectoryURL() -> URL {
+//        let storeURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.me.gorbuvla.SmileySurvey")
+//        //storeURL = storeURL?.appendingPathComponent("MovieGo.sqlite")
+//        return storeURL!
+//    }
+//}
 
 extension NSManagedObjectContext {
     
