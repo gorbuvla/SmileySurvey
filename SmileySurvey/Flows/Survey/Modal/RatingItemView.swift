@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 enum RatingItem {
     case excellent(Int)
     case good(Int)
