@@ -18,15 +18,23 @@ struct SurveyGridView: View {
     @State private var isPresented = false
     @State private var showModal = false
     
+    @State private var isNavigationActive = false
+    
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
     }
     
     var body: some View {
         NavigationView {
+            VStack {
             self.listContent
                 .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
                 .navigationBarItems(trailing: self.trailingNavItem)
+            
+            NavigationLink(destination: ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Food", question: "How good?"))), isActive: self.$isNavigationActive) {
+                EmptyView()
+            }
+            }
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
@@ -36,9 +44,16 @@ struct SurveyGridView: View {
                 .environmentObject(self.rotationObserver)
         }
         .sheet(isPresented: self.$viewModel.showing) {
-            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!.id))
-                .environmentObject(self.rotationObserver)
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!.id)) {
+                self.navigateTo()
+            }.environmentObject(self.rotationObserver)
         }
+    }
+    
+    private func navigateTo() {
+        //viewModel.showing = false
+        print("ACTIVATE NAVIGATION!!!")
+        isNavigationActive = true
     }
 
     private var listContent: some View {

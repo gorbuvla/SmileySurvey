@@ -16,6 +16,7 @@ struct SurveyModalDetail: View {
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var viewModel: ModalDetailViewModel
+    let onStart: () -> ()
     
     var body: some View {
         NavigationView {
@@ -45,10 +46,10 @@ struct SurveyModalDetail: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
-        .popover(isPresented: $active) {
-            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(self.viewModel.survey))
-                .environmentObject(self.rotationObserver)
-        }
+//        .popover(isPresented: $active) {
+//            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(self.viewModel.survey))
+//                .environmentObject(self.rotationObserver)
+//        }
         .onReceive(viewModel.completion) { self.presentationMode.wrappedValue.dismiss() }
     }
     
@@ -84,7 +85,11 @@ struct SurveyModalDetail: View {
                 RatingItemView(ratingItem: RatingItem.disaster(viewModel.survey.disasterPercentage))
             }
                 
-            Button(action: { self.active.toggle() }) {
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+                self.onStart()
+                
+            }) {
                 HStack {
                     Image(systemName: "hand.thumbsup")
                     
@@ -136,7 +141,11 @@ struct SurveyModalDetail: View {
                     RatingItemView(ratingItem: RatingItem.disaster(viewModel.survey.disasterPercentage))
                 }
                 
-                Button(action: { self.active.toggle() }) {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                self.onStart()
+                
+                }) {
                     HStack {
                         Image(systemName: "hand.thumbsup")
                         
