@@ -19,6 +19,7 @@
 		C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */; };
 		C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E063238097EB00F59D1A /* DonutChartSegment.swift */; };
 		C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E0652380A31C00F59D1A /* DonutChart.swift */; };
+		C21738C223DCE7F90003D26C /* RatingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738C123DCE7F90003D26C /* RatingItemView.swift */; };
 		C21D3D82238F06DA00D1B220 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = C21D3D81238F06DA00D1B220 /* Grid */; };
 		C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D83238F071400D1B220 /* SurveyGridView.swift */; };
 		C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */; };
@@ -80,6 +81,7 @@
 		C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSurveyRepository.swift; sourceTree = "<group>"; };
 		C207E063238097EB00F59D1A /* DonutChartSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChartSegment.swift; sourceTree = "<group>"; };
 		C207E0652380A31C00F59D1A /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
+		C21738C123DCE7F90003D26C /* RatingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingItemView.swift; sourceTree = "<group>"; };
 		C21D3D83238F071400D1B220 /* SurveyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridView.swift; sourceTree = "<group>"; };
 		C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridItemView.swift; sourceTree = "<group>"; };
 		C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */,
 				C2A3E0EF23B6594D0007A140 /* ModalDetailViewModel.swift */,
+				C21738C123DCE7F90003D26C /* RatingItemView.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
 				C2A3E0DD23B3CD010007A140 /* ImageResources.swift in Sources */,
+				C21738C223DCE7F90003D26C /* RatingItemView.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
 				C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */,
 				C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */,

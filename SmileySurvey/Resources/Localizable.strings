@@ -31,3 +31,4 @@
 
 "survey.detail.start" = "Start";
 "survey.detail.delete" = "Delete";
+"survey.detail.percentage" = "%d %%";

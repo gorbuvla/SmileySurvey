@@ -76,6 +76,13 @@ struct SurveyModalDetail: View {
             Text(L10n.Survey.Item.correspondents(self.viewModel.survey.totalCorrespondents).uppercased())
                 .font(.caption)
                 .foregroundColor(.secondary)
+            
+            HStack {
+                RatingItemView(ratingItem: RatingItem.excellent(viewModel.survey.excellentPercentage))
+                RatingItemView(ratingItem: RatingItem.good(viewModel.survey.goodPercentage))
+                RatingItemView(ratingItem: RatingItem.bad(viewModel.survey.badPercentage))
+                RatingItemView(ratingItem: RatingItem.disaster(viewModel.survey.disasterPercentage))
+            }
                 
             Button(action: { self.active.toggle() }) {
                 HStack {
@@ -122,6 +129,13 @@ struct SurveyModalDetail: View {
                     .font(.caption)
                     .foregroundColor(.secondary)
                 
+                HStack {
+                    RatingItemView(ratingItem: RatingItem.excellent(viewModel.survey.excellentPercentage))
+                    RatingItemView(ratingItem: RatingItem.good(viewModel.survey.goodPercentage))
+                    RatingItemView(ratingItem: RatingItem.bad(viewModel.survey.badPercentage))
+                    RatingItemView(ratingItem: RatingItem.disaster(viewModel.survey.disasterPercentage))
+                }
+                
                 Button(action: { self.active.toggle() }) {
                     HStack {
                         Image(systemName: "hand.thumbsup")
@@ -147,6 +161,25 @@ struct SurveyModalDetail: View {
                 }
             }
         }.smallPadding()
+    }
+}
+
+private extension Survey {
+    
+    var excellentPercentage: Int {
+        totalCorrespondents == 0 ? 0 : excellent / totalCorrespondents
+    }
+    
+    var goodPercentage: Int {
+        totalCorrespondents == 0 ? 0 : good / totalCorrespondents
+    }
+    
+    var badPercentage: Int {
+        totalCorrespondents == 0 ? 0 : bad / totalCorrespondents
+    }
+    
+    var disasterPercentage: Int {
+        totalCorrespondents == 0 ? 0 : disaster / totalCorrespondents
     }
 }
 

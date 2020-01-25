@@ -26,6 +26,10 @@ internal enum L10n {
     internal enum Detail {
       /// Delete
       internal static let delete = L10n.tr("Localizable", "survey.detail.delete")
+      /// %d %%
+      internal static func percentage(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "survey.detail.percentage", p1)
+      }
       /// Start
       internal static let start = L10n.tr("Localizable", "survey.detail.start")
     }
