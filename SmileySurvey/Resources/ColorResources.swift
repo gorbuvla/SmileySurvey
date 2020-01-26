@@ -10,13 +10,13 @@ import SwiftUI
 
 extension Color {
     
-    static let ratingDisaster = Color(hex: "F37D7F")
+    static let ratingDisaster = Color(hex: "ED2327")
     
-    static let ratingBad = Color(hex: "ED2327")
+    static let ratingBad = Color(hex: "F37D7F")
     
-    static let ratingGood = Color(hex: "049D30")
+    static let ratingGood = Color(hex: "97CE71")
     
-    static let ratingExcellent = Color(hex: "97CE71")
+    static let ratingExcellent = Color(hex: "049D30")
     
     static let ratingEmpty = Color(hex: "CCCCCC")
 }

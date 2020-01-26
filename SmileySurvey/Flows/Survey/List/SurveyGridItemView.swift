@@ -19,6 +19,8 @@ struct SurveyGridItemView: View {
             VStack {
                 DonutChart(data: survey.chartData)
                 
+                Spacer()
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text(survey.name)
@@ -59,7 +61,6 @@ struct SurveyGridItemView_Previews: PreviewProvider {
 }
 
 extension Survey {
-    // TODO: revisit colors once swiftgen is set up
     var chartData: ChartRating {
         get { ChartRating(excellent: excellent, good: good, bad: bad, disaster: disaster) }
     }

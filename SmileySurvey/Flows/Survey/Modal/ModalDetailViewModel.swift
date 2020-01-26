@@ -13,7 +13,7 @@ class ModalDetailViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     
-    private let surveyId: UUID
+    private let provider: CurrentSurveyProvider
     private let repository: SurveyRepositoring
     private let deleteAction: Action<(Survey), (), Error>
     
@@ -25,8 +25,8 @@ class ModalDetailViewModel: ObservableObject {
         get { deleteAction.data }
     }
     
-    init(_ surveyId: UUID, repository: SurveyRepositoring) {
-        self.surveyId = surveyId
+    init(provider: CurrentSurveyProvider, repository: SurveyRepositoring) {
+        self.provider = provider
         self.repository = repository
         self.deleteAction = Action { survey in repository.delete(survey: survey) }
         
@@ -40,15 +40,17 @@ class ModalDetailViewModel: ObservableObject {
     
     private func bindUpdates() {
         loading = true
-        repository.observe(filter: .single(id: surveyId))
-            .compactMap { $0.first }
-            .subscribe(on: DispatchQueue.global())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] survey in
-                self?.loading = false
-                self?.survey = survey
-            })
-            .store(in: &cancellables)
+        provider.selectedSurveyId.flatMap { id in
+            self.repository.observe(filter: .single(id: id))
+                .compactMap { $0.isEmpty ? nil : $0.first }
+        }
+        .subscribe(on: DispatchQueue.global())
+        .receive(on: DispatchQueue.main)
+        .sink(receiveValue: { [weak self] survey in
+            self?.loading = false
+            self?.survey = survey
+        })
+        .store(in: &cancellables)
     }
 }
 

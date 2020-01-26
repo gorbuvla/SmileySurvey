@@ -17,19 +17,19 @@ final class ViewModelFactories {
     }
     
     var surveyGridViewModel: () -> SurveyGridViewModel {
-        return { SurveyGridViewModel(repository: self.dependencies.surveyRepository) }
+        return { SurveyGridViewModel(store: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
     }
     
     var surveyFormViewModel: () -> SurveyFormViewModel {
         return { SurveyFormViewModel(repository: self.dependencies.surveyRepository) }
     }
     
-    var activeSurveyViewModel: (Survey) -> ActiveSurveyViewModel {
-        return { survey in ActiveSurveyViewModel(survey, repository: self.dependencies.surveyRepository) }
+    var activeSurveyViewModel: () -> ActiveSurveyViewModel {
+        return { ActiveSurveyViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
     }
     
-    var modalDetailViewModel: (UUID) -> ModalDetailViewModel {
-        return { surveyId in ModalDetailViewModel(surveyId, repository: self.dependencies.surveyRepository) }
+    var modalDetailViewModel: () -> ModalDetailViewModel {
+        return { ModalDetailViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
     }
 }
 

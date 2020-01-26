@@ -17,27 +17,30 @@ struct SurveyGridView: View {
     @State private var showsAddNewSurvey: Bool = false
     @State private var isPresented = false
     @State private var showModal = false
+    @State private var isNavigationActive = false
     
     private var tracksCount: Tracks {
-        get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
+        get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 3) }
     }
     
     var body: some View {
         NavigationView {
-            self.listContent
-                .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
-                .navigationBarItems(trailing: self.trailingNavItem)
+            VStack {
+                self.listContent
+                    .navigationBarTitle(Text(L10n.Survey.Grid.title), displayMode: .inline)
+                    .navigationBarItems(trailing: self.trailingNavItem)
+            
+                    NavigationLink(destination: ActiveSurveyView(viewModel: factories.activeSurveyViewModel()), isActive: self.$isNavigationActive) {
+                        EmptyView()
+                    }
+            }
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
-            // for debug purposes
-        .popover(isPresented: self.$isPresented) {
-            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(Survey(name: "Name", question: "whats up?")))
-                .environmentObject(self.rotationObserver)
-        }
         .sheet(isPresented: self.$viewModel.showing) {
-            SurveyModalDetail(viewModel: factories.modalDetailViewModel(self.viewModel.selectedSurvey!.id))
-                .environmentObject(self.rotationObserver)
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel()) {
+                self.navigateTo()
+            }.environmentObject(self.rotationObserver)
         }
     }
 
@@ -60,15 +63,14 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            HStack {
-                NavigationLink(destination: SurveyFormView()) {
-                    Image.new.font(.title) // TODO: so that icons are pressable... revert later
-                }
-                Button(action: { self.isPresented.toggle() }) {
-                    Image.reload.font(.title) // TODO: so that icons are pressable... revert later
-                }
+            NavigationLink(destination: SurveyFormView()) {
+                Image.new.font(.title)
             }
         }
+    }
+    
+    private func navigateTo() {
+        isNavigationActive = true
     }
 }
 
