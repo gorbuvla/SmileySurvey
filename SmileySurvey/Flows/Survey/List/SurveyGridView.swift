@@ -20,7 +20,7 @@ struct SurveyGridView: View {
     @State private var isNavigationActive = false
     
     private var tracksCount: Tracks {
-        get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 2) }
+        get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 3) }
     }
     
     var body: some View {

@@ -11,6 +11,7 @@ import SwiftUI
 struct ActiveSurveyView: View {
     
     @EnvironmentObject var rotationObserver: RotationObserver
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel: ActiveSurveyViewModel
     
     var body: some View {
@@ -27,6 +28,11 @@ struct ActiveSurveyView: View {
             }
         }
         .loading(isLoading: $viewModel.loading)
+        .navigationBarBackButtonHidden(true) // We handle back navigation in our own way, user has to enter pin if provided
+        .navigationBarTitle(Text(viewModel.survey.name), displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: { self.exitSurvey() }) {
+            Text("Exit")
+        })
     }
     
     private var gridReactionView: some View {
@@ -71,5 +77,10 @@ struct ActiveSurveyView: View {
                 Image.ratingDisaster.fitIntoBounds()
             }.smallPadding()
         }.largePadding()
+    }
+    
+    private func exitSurvey() {
+        // TODO: prompt user for a pin code
+        presentationMode.wrappedValue.dismiss()
     }
 }

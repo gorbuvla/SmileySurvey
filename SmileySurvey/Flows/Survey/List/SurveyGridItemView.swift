@@ -19,6 +19,8 @@ struct SurveyGridItemView: View {
             VStack {
                 DonutChart(data: survey.chartData)
                 
+                Spacer()
+                
                 HStack {
                     VStack(alignment: .leading) {
                         Text(survey.name)
