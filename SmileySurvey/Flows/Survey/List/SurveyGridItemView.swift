@@ -59,7 +59,6 @@ struct SurveyGridItemView_Previews: PreviewProvider {
 }
 
 extension Survey {
-    // TODO: revisit colors once swiftgen is set up
     var chartData: ChartRating {
         get { ChartRating(excellent: excellent, good: good, bad: bad, disaster: disaster) }
     }

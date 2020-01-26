@@ -42,6 +42,12 @@ struct DonutChart: View {
     }
     
     private static func computeSegments(for rect: CGRect, with data: ChartRating) -> [DonutSegment] {
+        
+        print("Chart excellent: \(data.excellent)")
+        print("Chart good: \(data.good)")
+        print("Chart bad: \(data.bad)")
+        print("Chart disaster: \(data.disaster)")
+        
         let arrayData = data.ratingData
         let total = arrayData.map { (value, _) in value }.reduce(0, +) // 😱 so cool
         let degreesPerPoint = 360.0 / Double(total)

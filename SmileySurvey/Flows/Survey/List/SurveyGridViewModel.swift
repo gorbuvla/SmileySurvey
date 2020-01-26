@@ -12,22 +12,23 @@ import Combine
 final class SurveyGridViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
+    private let store: CurrentSurveyStore
     private let repository: SurveyRepositoring
     
     @Published var surveys: [Survey] = []
     @Published var loading: Bool = true
     @Published var showing: Bool = false
     @Published var error: Error? = nil
-    @Published var selectedSurvey: Survey? = nil
     
-    init(repository: SurveyRepositoring) {
+    init(store: CurrentSurveyStore, repository: SurveyRepositoring) {
+        self.store = store
         self.repository = repository
         bindUpdates()
     }
     
     func select(survey: Survey) {
         showing = true
-        selectedSurvey = survey
+        store.currentSurveyId = survey.id
     }
     
     private func bindUpdates() {

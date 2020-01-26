@@ -46,10 +46,6 @@ struct SurveyModalDetail: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
-//        .popover(isPresented: $active) {
-//            ActiveSurveyView(viewModel: factories.activeSurveyViewModel(self.viewModel.survey))
-//                .environmentObject(self.rotationObserver)
-//        }
         .onReceive(viewModel.completion) { self.presentationMode.wrappedValue.dismiss() }
     }
     
@@ -176,19 +172,19 @@ struct SurveyModalDetail: View {
 private extension Survey {
     
     var excellentPercentage: Int {
-        totalCorrespondents == 0 ? 0 : excellent / totalCorrespondents
+        totalCorrespondents == 0 ? 0 : Int(Double(excellent) / Double(totalCorrespondents) * 100)
     }
     
     var goodPercentage: Int {
-        totalCorrespondents == 0 ? 0 : good / totalCorrespondents
+        totalCorrespondents == 0 ? 0 : Int(Double(good) / Double(totalCorrespondents) * 100)
     }
     
     var badPercentage: Int {
-        totalCorrespondents == 0 ? 0 : bad / totalCorrespondents
+        totalCorrespondents == 0 ? 0 : Int(Double(bad) / Double(totalCorrespondents) * 100)
     }
     
     var disasterPercentage: Int {
-        totalCorrespondents == 0 ? 0 : disaster / totalCorrespondents
+        totalCorrespondents == 0 ? 0 : Int(Double(disaster) / Double(totalCorrespondents) * 100)
     }
 }
 

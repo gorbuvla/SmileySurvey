@@ -26,26 +26,27 @@ struct ActiveSurveyView: View {
                 lineReactionView
             }
         }
+        .loading(isLoading: $viewModel.loading)
     }
     
     private var gridReactionView: some View {
         VStack {
             HStack {
-                Button(action: { self.viewModel.submit(reaction: .good) }) {
+                Button(action: { self.viewModel.submit(reaction: .excellent) }) {
                     Image.ratingExcellent.fitIntoBounds()
                 }.smallPadding()
                 
-                Button(action: { self.viewModel.submit(reaction: .excellent) }) {
+                Button(action: { self.viewModel.submit(reaction: .good) }) {
                     Image.ratingGood.fitIntoBounds()
                 }.smallPadding()
             }
             
             HStack {
-                Button(action: { self.viewModel.submit(reaction: .disaster) }) {
+                Button(action: { self.viewModel.submit(reaction: .bad) }) {
                     Image.ratingBad.fitIntoBounds()
                 }.smallPadding()
                 
-                Button(action: { self.viewModel.submit(reaction: .bad) }) {
+                Button(action: { self.viewModel.submit(reaction: .disaster) }) {
                     Image.ratingDisaster.fitIntoBounds()
                 }.smallPadding()
             }
@@ -54,29 +55,21 @@ struct ActiveSurveyView: View {
     
     private var lineReactionView: some View {
         HStack {
-            Button(action: { self.viewModel.submit(reaction: .good) }) {
+            Button(action: { self.viewModel.submit(reaction: .excellent) }) {
                 Image.ratingExcellent.fitIntoBounds()
             }.smallPadding()
             
-            Button(action: { self.viewModel.submit(reaction: .excellent) }) {
+            Button(action: { self.viewModel.submit(reaction: .good) }) {
                 Image.ratingGood.fitIntoBounds()
             }.smallPadding()
                 
-            Button(action: { self.viewModel.submit(reaction: .good) }) {
+            Button(action: { self.viewModel.submit(reaction: .bad) }) {
                 Image.ratingBad.fitIntoBounds()
             }.smallPadding()
                 
-            Button(action: { self.viewModel.submit(reaction: .excellent) }) {
+            Button(action: { self.viewModel.submit(reaction: .disaster) }) {
                 Image.ratingDisaster.fitIntoBounds()
             }.smallPadding()
         }.largePadding()
-    }
-}
-
-struct ActiveSurveyView_Previews: PreviewProvider {
-    static var previews: some View {
-        let survey = Survey(name: "Active survey", question: "How are you doing today?")
-        return ActiveSurveyView(viewModel: factories.activeSurveyViewModel(survey))
-            .environmentObject(RotationObserver(mode: .portrait))
     }
 }

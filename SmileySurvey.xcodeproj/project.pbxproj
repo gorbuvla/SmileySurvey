@@ -48,6 +48,7 @@
 		C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0F823BB972E0007A140 /* Model.xcdatamodeld */; };
 		C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FB23BB97D80007A140 /* Database.swift */; };
 		C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */; };
+		C2ADA8BA23DDE99900B4D27A /* SurveyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -110,6 +111,7 @@
 		C2A3E0F923BB972E0007A140 /* DbSurvey.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DbSurvey.xcdatamodel; sourceTree = "<group>"; };
 		C2A3E0FB23BB97D80007A140 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSurveyRepository.swift; sourceTree = "<group>"; };
+		C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStore.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				C206D7D823788A17007D59D3 /* SurveyRepositoring.swift */,
 				C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */,
 				C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */,
+				C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */,
 				C26D447B23D35BDF00E7E268 /* Action.swift in Sources */,
 				C2A3E0F023B6594D0007A140 /* ModalDetailViewModel.swift in Sources */,
+				C2ADA8BA23DDE99900B4D27A /* SurveyStore.swift in Sources */,
 				C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */,
 				C2A3E0E023B3D0680007A140 /* ActiveSurveyView.swift in Sources */,
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
