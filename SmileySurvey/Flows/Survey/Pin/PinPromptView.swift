@@ -12,6 +12,9 @@ struct PinPromptView: View {
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
+    let viewModel: PinPromptViewModel
+    let onSuccess: () -> ()
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .init(horizontal: .center, vertical: .center)) {
@@ -116,11 +119,14 @@ struct PinPromptView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
-            )
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
+        )
         .fullSpace()
+        .onReceive(viewModel.success) {
+            self.onSuccess()
+        }
     }
     
     enum Mode {

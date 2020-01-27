@@ -29,6 +29,8 @@ class PinPromptViewModel: ObservableObject {
         didSet { error = nil }
     }
     
+    @Published var success: Bool = false
+    
     @Published var error: String? = nil {
         didSet {
             digit1 = nil
@@ -58,11 +60,26 @@ class PinPromptViewModel: ObservableObject {
         
         
         guard let d1 = digit1, let d2 = digit2, let d3 = digit3, let d4 = digit4 else { return }
-            
-        if settings.pin == d1 + d2 + d3 + d4 {
-            
+        
+        let pin = d1 + d2 + d3 + d4
+        
+        if case let .verify = mode {
+            validatePin(pin: pin)
+        } else {
+            addPin(pin: pin)
+        }
+    }
+    
+    private func validatePin(pin: String) {
+        if settings.pin == pin {
+            success = true
         } else {
             error = "Pin not valid"
         }
+    }
+    
+    private func addPin(pin: String) {
+        settings.pin = pin
+        success = true
     }
 }

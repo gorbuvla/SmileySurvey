@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol UserSettingsRepositoring {
+protocol UserSettingsRepositoring: class {
     
     var pin: String? { get set }
 }
