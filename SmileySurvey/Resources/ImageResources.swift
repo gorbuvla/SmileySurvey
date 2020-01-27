@@ -12,6 +12,8 @@ extension Image {
     
     static let new = Image(systemName: "plus.circle")
     
+    static let settings = Image(systemName: "gear")
+    
     static let reload = Image(systemName: "arrow.clockwise.circle")
     
     static let ratingDisaster = Image("smiley-disaster")

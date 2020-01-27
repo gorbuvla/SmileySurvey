@@ -25,7 +25,7 @@ final class ViewModelFactories {
     }
     
     var activeSurveyViewModel: () -> ActiveSurveyViewModel {
-        return { ActiveSurveyViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
+        return { ActiveSurveyViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository, settings: self.dependencies.userSettings) }
     }
     
     var modalDetailViewModel: () -> ModalDetailViewModel {

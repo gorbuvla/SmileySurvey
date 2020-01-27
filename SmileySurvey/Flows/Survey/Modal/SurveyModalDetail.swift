@@ -84,7 +84,6 @@ struct SurveyModalDetail: View {
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
                 self.onStart()
-                
             }) {
                 HStack {
                     Image(systemName: "hand.thumbsup")

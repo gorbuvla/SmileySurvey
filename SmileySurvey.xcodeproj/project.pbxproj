@@ -20,6 +20,10 @@
 		C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E063238097EB00F59D1A /* DonutChartSegment.swift */; };
 		C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C207E0652380A31C00F59D1A /* DonutChart.swift */; };
 		C21738C223DCE7F90003D26C /* RatingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738C123DCE7F90003D26C /* RatingItemView.swift */; };
+		C21738C523DF830C0003D26C /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738C423DF830C0003D26C /* UserDefault.swift */; };
+		C21738C723DF83380003D26C /* UserSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738C623DF83380003D26C /* UserSettingsRepository.swift */; };
+		C21738CA23DF84C80003D26C /* PinPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738C923DF84C80003D26C /* PinPromptView.swift */; };
+		C21738CC23DF86F20003D26C /* PinPromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21738CB23DF86F20003D26C /* PinPromptViewModel.swift */; };
 		C21D3D82238F06DA00D1B220 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = C21D3D81238F06DA00D1B220 /* Grid */; };
 		C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D83238F071400D1B220 /* SurveyGridView.swift */; };
 		C21D3D86238F129D00D1B220 /* SurveyGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */; };
@@ -83,6 +87,10 @@
 		C207E063238097EB00F59D1A /* DonutChartSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChartSegment.swift; sourceTree = "<group>"; };
 		C207E0652380A31C00F59D1A /* DonutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutChart.swift; sourceTree = "<group>"; };
 		C21738C123DCE7F90003D26C /* RatingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingItemView.swift; sourceTree = "<group>"; };
+		C21738C423DF830C0003D26C /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		C21738C623DF83380003D26C /* UserSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsRepository.swift; sourceTree = "<group>"; };
+		C21738C923DF84C80003D26C /* PinPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPromptView.swift; sourceTree = "<group>"; };
+		C21738CB23DF86F20003D26C /* PinPromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinPromptViewModel.swift; sourceTree = "<group>"; };
 		C21D3D83238F071400D1B220 /* SurveyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridView.swift; sourceTree = "<group>"; };
 		C21D3D85238F129D00D1B220 /* SurveyGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyGridItemView.swift; sourceTree = "<group>"; };
 		C21D3D8823929A0A00D1B220 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -199,6 +207,7 @@
 		C206D7CF23788985007D59D3 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
+				C21738C823DF84B30003D26C /* Pin */,
 				C2A3E0DE23B3D0560007A140 /* Active */,
 				C2C01AC9239D47E10006FC8C /* Form */,
 				C24B08B4238085CB0062AD81 /* Modal */,
@@ -220,6 +229,7 @@
 		C206D7D6237889EB007D59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C21738C323DF82EF0003D26C /* Extensions */,
 				C2A3E0F723BB96EC0007A140 /* CoreData */,
 				C2A3E0EE23B6367C0007A140 /* Action */,
 				C2A3E0E423B3D8A90007A140 /* Environment */,
@@ -237,6 +247,7 @@
 				C206D7DD23788ABC007D59D3 /* LocalSurveyRepository.swift */,
 				C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */,
 				C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */,
+				C21738C623DF83380003D26C /* UserSettingsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -267,6 +278,23 @@
 				C207E0652380A31C00F59D1A /* DonutChart.swift */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		C21738C323DF82EF0003D26C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C21738C423DF830C0003D26C /* UserDefault.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C21738C823DF84B30003D26C /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				C21738C923DF84C80003D26C /* PinPromptView.swift */,
+				C21738CB23DF86F20003D26C /* PinPromptViewModel.swift */,
+			);
+			path = Pin;
 			sourceTree = "<group>";
 		};
 		C21D3D87239299B100D1B220 /* ActivityIndicator */ = {
@@ -533,6 +561,7 @@
 				C2A3E0E323B3D7660007A140 /* SmileyHostingController.swift in Sources */,
 				C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */,
 				C2A3E0E823B3E76F0007A140 /* ActiveSurveyViewModel.swift in Sources */,
+				C21738C723DF83380003D26C /* UserSettingsRepository.swift in Sources */,
 				C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */,
 				C2A3E0FA23BB972E0007A140 /* Model.xcdatamodeld in Sources */,
 				C24B08B6238085E40062AD81 /* ModalTest.swift in Sources */,
@@ -560,12 +589,15 @@
 				C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */,
 				C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */,
 				C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */,
+				C21738C523DF830C0003D26C /* UserDefault.swift in Sources */,
 				C207E064238097EB00F59D1A /* DonutChartSegment.swift in Sources */,
 				C21D3D84238F071400D1B220 /* SurveyGridView.swift in Sources */,
 				C2246A202392C9B1008C3C60 /* ModalPresentable.swift in Sources */,
 				C206D7D923788A17007D59D3 /* SurveyRepositoring.swift in Sources */,
+				C21738CA23DF84C80003D26C /* PinPromptView.swift in Sources */,
 				C21D3D8923929A0A00D1B220 /* ActivityIndicator.swift in Sources */,
 				C21D3D8B23929BD800D1B220 /* LoadingView.swift in Sources */,
+				C21738CC23DF86F20003D26C /* PinPromptViewModel.swift in Sources */,
 				C2A3E0EB23B4F6020007A140 /* GeneralViewExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

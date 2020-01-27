@@ -80,7 +80,10 @@ struct ActiveSurveyView: View {
     }
     
     private func exitSurvey() {
-        // TODO: prompt user for a pin code
-        presentationMode.wrappedValue.dismiss()
+        if viewModel.shouldCheckPin {
+            // TODO: prompt user for a pin code
+        } else {
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 }

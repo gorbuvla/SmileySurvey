@@ -14,13 +14,19 @@ class ActiveSurveyViewModel: ObservableObject {
     // Blank survey by default to prevent madness with control flow in VB... 🤦‍♂️
     @Published var survey: Survey = Survey(name: "", question: "")
     @Published var loading: Bool = false
+    private let settings: UserSettingsRepositoring
     private let provider: CurrentSurveyProvider
     private let repository: SurveyRepositoring
     private var cancellables = Set<AnyCancellable>()
     
-    init(provider: CurrentSurveyProvider, repository: SurveyRepositoring) {
+    var shouldCheckPin: Bool {
+        get { settings.pin != nil }
+    }
+    
+    init(provider: CurrentSurveyProvider, repository: SurveyRepositoring, settings: UserSettingsRepositoring) {
         self.provider = provider
         self.repository = repository
+        self.settings = settings
         bindSelection()
     }
     
