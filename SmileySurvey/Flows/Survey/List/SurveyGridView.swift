@@ -14,9 +14,6 @@ struct SurveyGridView: View {
     @EnvironmentObject var rotationObserver: RotationObserver
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
-    @State private var showsAddNewSurvey: Bool = false
-    @State private var isPresented = false
-    @State private var showModal = false
     @State private var isNavigationActive = false
     @State private var prompt = false
     @State private var presentedSheet: ActiveSheet = .detail
@@ -45,7 +42,8 @@ struct SurveyGridView: View {
                     self.navigateTo()
                 }.environmentObject(self.rotationObserver)
             } else {
-                PinPromptView()
+                //PinPromptView()
+                Text("Test")
             }
         }
     }

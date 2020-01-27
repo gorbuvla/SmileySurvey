@@ -28,11 +28,10 @@ struct PinPromptView: View {
                     
                     HStack {
                         Text("1").font(.largeTitle).fontWeight(.heavy)
-                            .padding([.horizontal], 10)
-                        Text("_").font(.largeTitle).padding([.horizontal], 10)
-                        Text("_").font(.largeTitle).padding([.horizontal], 10)
-                        Text("_").font(.largeTitle).padding([.horizontal], 10)
-                    }.padding([.bottom], 50)
+                        Text("_").font(.largeTitle).padding(.horizontal, 10)
+                        Text("_").font(.largeTitle).padding(.horizontal, 10)
+                        Text("_").font(.largeTitle).padding(.horizontal, 10)
+                    }.padding(.bottom, 50)
                     
                     HStack {
                         Button(action: {}) {
@@ -148,12 +147,5 @@ fileprivate extension View {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.blue, lineWidth: 2)
             )
-    }
-}
-
-
-struct PinPromptView_Previews: PreviewProvider {
-    static var previews: some View {
-        PinPromptView()
     }
 }
