@@ -32,3 +32,10 @@
 "survey.detail.start" = "Start";
 "survey.detail.delete" = "Delete";
 "survey.detail.percentage" = "%d %%";
+
+// Settings
+
+"settings.title" = "Settings";
+"settings.general.title" = "General";
+"settings.general.pin.title" = "PIN";
+"settings.general.pin.empty" = "Not set";

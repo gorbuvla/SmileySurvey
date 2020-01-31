@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Combine
 
 class PinPromptViewModel: ObservableObject {
     
     private let settings: UserSettingsRepositoring
+    private let continuationSubject = PassthroughSubject<(), Never>()
     let mode: PinPromptView.Mode
     
     @Published var digit1: String? = nil {
@@ -29,7 +31,9 @@ class PinPromptViewModel: ObservableObject {
         didSet { error = nil }
     }
     
-    @Published var success: Bool = false
+    var completion: AnyPublisher<(), Never> {
+        get { continuationSubject.eraseToAnyPublisher() }
+    }
     
     @Published var error: String? = nil {
         didSet {
@@ -72,7 +76,7 @@ class PinPromptViewModel: ObservableObject {
     
     private func validatePin(pin: String) {
         if settings.pin == pin {
-            success = true
+            continuationSubject.send(())
         } else {
             error = "Pin not valid"
         }
@@ -80,6 +84,6 @@ class PinPromptViewModel: ObservableObject {
     
     private func addPin(pin: String) {
         settings.pin = pin
-        success = true
+        continuationSubject.send(())
     }
 }

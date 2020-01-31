@@ -98,7 +98,7 @@ struct SurveyModalDetail: View {
             
             Button(action: { self.viewModel.delete() }) {
                 HStack {
-                    Image(systemName: "trash")
+                    Image.delete
                     
                     Text(L10n.Survey.Detail.delete)
                         .font(.title)

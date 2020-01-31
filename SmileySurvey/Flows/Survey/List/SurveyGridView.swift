@@ -76,10 +76,7 @@ struct SurveyGridView: View {
                     Image.new.font(.title)
                 }
                 
-                Button(action: {
-                    self.presentedSheet = .pin
-                    self.prompt.toggle()
-                }) {
+                NavigationLink(destination: SettingsView(viewModel: factories.settingsViewModel())) {
                     Image.settings.font(.title)
                 }
             }

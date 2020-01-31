@@ -33,6 +33,8 @@
 		C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A222392D0D5008C3C60 /* ModelDependency.swift */; };
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
 		C26D447B23D35BDF00E7E268 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26D447A23D35BDF00E7E268 /* Action.swift */; };
+		C289F0FF23E35522000B11E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289F0FE23E35522000B11E9 /* SettingsView.swift */; };
+		C289F10123E35532000B11E9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289F10023E35532000B11E9 /* SettingsViewModel.swift */; };
 		C2A3E0BA23B3B45C0007A140 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0B923B3B45C0007A140 /* Localizable.strings */; };
 		C2A3E0BD23B3B5180007A140 /* colors.json in Resources */ = {isa = PBXBuildFile; fileRef = C2A3E0BC23B3B5180007A140 /* colors.json */; };
 		C2A3E0CC23B3C1AC0007A140 /* ColorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */; };
@@ -50,6 +52,7 @@
 		C2A3E0FC23BB97D80007A140 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FB23BB97D80007A140 /* Database.swift */; };
 		C2A3E0FE23BB99800007A140 /* CoreDataSurveyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */; };
 		C2ADA8BA23DDE99900B4D27A /* SurveyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */; };
+		C2B8833B23E37E57009AF151 /* StdExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8833A23E37E57009AF151 /* StdExtensions.swift */; };
 		C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */; };
 		C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */; };
 		C2E362DE239EFBA800AC9913 /* SurveyFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */; };
@@ -95,6 +98,8 @@
 		C2246A222392D0D5008C3C60 /* ModelDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependency.swift; sourceTree = "<group>"; };
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
 		C26D447A23D35BDF00E7E268 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		C289F0FE23E35522000B11E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C289F10023E35532000B11E9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C2A3E0B923B3B45C0007A140 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C2A3E0BC23B3B5180007A140 /* colors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = colors.json; sourceTree = "<group>"; };
 		C2A3E0CB23B3C1AC0007A140 /* ColorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResources.swift; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		C2A3E0FB23BB97D80007A140 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		C2A3E0FD23BB99800007A140 /* CoreDataSurveyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSurveyRepository.swift; sourceTree = "<group>"; };
 		C2ADA8B923DDE99900B4D27A /* SurveyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyStore.swift; sourceTree = "<group>"; };
+		C2B8833A23E37E57009AF151 /* StdExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdExtensions.swift; sourceTree = "<group>"; };
 		C2C01ACA239D47FA0006FC8C /* SurveyFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormView.swift; sourceTree = "<group>"; };
 		C2E362DB239EF94F00AC9913 /* FormTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextFieldView.swift; sourceTree = "<group>"; };
 		C2E362DD239EFBA800AC9913 /* SurveyFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyFormViewModel.swift; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 		C206D7CE23788969007D59D3 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				C289F0FD23E35509000B11E9 /* Settings */,
+				C21738C823DF84B30003D26C /* Pin */,
 				C206D7CF23788985007D59D3 /* Survey */,
 			);
 			path = Flows;
@@ -198,7 +206,6 @@
 		C206D7CF23788985007D59D3 /* Survey */ = {
 			isa = PBXGroup;
 			children = (
-				C21738C823DF84B30003D26C /* Pin */,
 				C2A3E0DE23B3D0560007A140 /* Active */,
 				C2C01AC9239D47E10006FC8C /* Form */,
 				C24B08B4238085CB0062AD81 /* Modal */,
@@ -274,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				C21738C423DF830C0003D26C /* UserDefault.swift */,
+				C2B8833A23E37E57009AF151 /* StdExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -313,6 +321,15 @@
 				C21738C123DCE7F90003D26C /* RatingItemView.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		C289F0FD23E35509000B11E9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C289F0FE23E35522000B11E9 /* SettingsView.swift */,
+				C289F10023E35532000B11E9 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		C2A3E0B823B3B42A0007A140 /* Resources */ = {
@@ -548,6 +565,7 @@
 				C21738C223DCE7F90003D26C /* RatingItemView.swift in Sources */,
 				C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */,
 				C2C01ACB239D47FA0006FC8C /* SurveyFormView.swift in Sources */,
+				C289F10123E35532000B11E9 /* SettingsViewModel.swift in Sources */,
 				C2A3E0DB23B3C7E20007A140 /* LocalizedStrings.swift in Sources */,
 				C2A3E0DA23B3C7E20007A140 /* Assets.swift in Sources */,
 				C26D447B23D35BDF00E7E268 /* Action.swift in Sources */,
@@ -558,9 +576,11 @@
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C2A3E0E623B3D8C50007A140 /* RotationObserver.swift in Sources */,
+				C2B8833B23E37E57009AF151 /* StdExtensions.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
 				C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */,
+				C289F0FF23E35522000B11E9 /* SettingsView.swift in Sources */,
 				C206D7AC237888BE007D59D3 /* SceneDelegate.swift in Sources */,
 				C206D7DC23788A45007D59D3 /* Survey.swift in Sources */,
 				C2A3E0ED23B4F8CE0007A140 /* ImageExtensions.swift in Sources */,

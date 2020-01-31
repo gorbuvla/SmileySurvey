@@ -31,6 +31,14 @@ final class ViewModelFactories {
     var modalDetailViewModel: () -> ModalDetailViewModel {
         return { ModalDetailViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
     }
+    
+    var settingsViewModel: () -> SettingsViewModel {
+        return { SettingsViewModel(repository: self.dependencies.userSettings) }
+    }
+    
+    var pinPromptViewModel: (PinPromptView.Mode) -> PinPromptViewModel {
+        return { mode in PinPromptViewModel(mode: mode, settings: self.dependencies.userSettings) }
+    }
 }
 
 let factories = ViewModelFactories(modelDependency: ModelDependency())

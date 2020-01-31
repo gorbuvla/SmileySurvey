@@ -10,11 +10,11 @@ import Foundation
 
 protocol UserSettingsRepositoring: class {
     
-    var pin: String? { get set }
+    var pin: String { get set }
 }
 
 final class UserSettingsRepository: UserSettingsRepositoring {
     
-    @UserDefault("user_pin", defaultValue: nil)
-    var pin: String?
+    @UserDefault("user_pin", defaultValue: "")
+    var pin: String
 }

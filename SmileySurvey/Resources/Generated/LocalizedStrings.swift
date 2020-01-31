@@ -22,6 +22,21 @@ internal enum L10n {
     internal static let done = L10n.tr("Localizable", "general.done")
   }
 
+  internal enum Settings {
+    /// Settings
+    internal static let title = L10n.tr("Localizable", "settings.title")
+    internal enum General {
+      /// General
+      internal static let title = L10n.tr("Localizable", "settings.general.title")
+      internal enum Pin {
+        /// Not set
+        internal static let empty = L10n.tr("Localizable", "settings.general.pin.empty")
+        /// PIN
+        internal static let title = L10n.tr("Localizable", "settings.general.pin.title")
+      }
+    }
+  }
+
   internal enum Survey {
     internal enum Detail {
       /// Delete
