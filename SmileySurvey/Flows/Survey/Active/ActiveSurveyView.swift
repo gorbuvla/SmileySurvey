@@ -13,6 +13,7 @@ struct ActiveSurveyView: View {
     @EnvironmentObject var rotationObserver: RotationObserver
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel: ActiveSurveyViewModel
+    @State private var pinPresented: Bool = false
     
     var body: some View {
         VStack {
@@ -30,9 +31,20 @@ struct ActiveSurveyView: View {
         .loading(isLoading: $viewModel.loading)
         .navigationBarBackButtonHidden(true) // We handle back navigation in our own way, user has to enter pin if provided
         .navigationBarTitle(Text(viewModel.survey.name), displayMode: .inline)
-        .navigationBarItems(trailing: Button(action: { self.exitSurvey() }) {
+        
+        .navigationBarItems(trailing: trailingNavItems)
+        .sheet(isPresented: $pinPresented) {
+            PinPromptView(viewModel: factories.pinPromptViewModel(.verify)) {
+                //self.viewModel.onUpdated()
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
+    }
+    
+    private var trailingNavItems: some View {
+        Button(action: { self.exitSurvey() }) {
             Text("Exit")
-        })
+        }
     }
     
     private var gridReactionView: some View {
@@ -81,7 +93,7 @@ struct ActiveSurveyView: View {
     
     private func exitSurvey() {
         if viewModel.shouldCheckPin {
-            // TODO: prompt user for a pin code
+            pinPresented.toggle()
         } else {
             presentationMode.wrappedValue.dismiss()
         }

@@ -12,7 +12,7 @@ struct PinPromptView: View {
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     
-    let viewModel: PinPromptViewModel
+    @ObservedObject var viewModel: PinPromptViewModel
     let onSuccess: () -> ()
     
     var body: some View {
@@ -26,12 +26,13 @@ struct PinPromptView: View {
                 VStack {
                     Spacer()
                     
+                    
                     HStack {
-                        Text("1").font(.largeTitle).fontWeight(.heavy)
-                        Text("_").font(.largeTitle).padding(.horizontal, 10)
-                        Text("_").font(.largeTitle).padding(.horizontal, 10)
-                        Text("_").font(.largeTitle).padding(.horizontal, 10)
-                    }.padding(.bottom, CGFloat())
+                        Text(self.viewModel.digit1 ?? "_").pinDigitStyle()
+                        Text(self.viewModel.digit2 ?? "_").pinDigitStyle()
+                        Text(self.viewModel.digit3 ?? "_").pinDigitStyle()
+                        Text(self.viewModel.digit4 ?? "_").pinDigitStyle()
+                    }.padding(.bottom, 10)
                     
                     Spacer()
                     
@@ -62,25 +63,26 @@ struct PinPromptView: View {
         )
         .fullSpace()
         .onReceive(viewModel.completion) {
+            self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
         }
     }
     
     private func buttonRowView(digit1: String, digit2: String, digit3: String) -> some View {
         return HStack {
-            Button(action: {}) {
+            Button(action: { self.viewModel.enter(digit: digit1) }) {
                 Text(digit1)
                     .font(.largeTitle)
                     .roundedBackground(.white)
             }
             
-            Button(action: {}) {
+            Button(action: { self.viewModel.enter(digit: digit2) }) {
                 Text(digit2)
                     .font(.largeTitle)
                     .roundedBackground(.white)
             }
             
-            Button(action: {}) {
+            Button(action: { self.viewModel.enter(digit: digit3) }) {
                 Text(digit3)
                     .font(.largeTitle)
                     .roundedBackground(.white)
@@ -91,6 +93,13 @@ struct PinPromptView: View {
     enum Mode {
         case new
         case verify
+    }
+}
+
+fileprivate extension Text {
+    
+    func pinDigitStyle() -> some View {
+        self.font(.largeTitle).fontWeight(.heavy).padding(.horizontal, 10)
     }
 }
 
@@ -109,83 +118,3 @@ fileprivate extension View {
             )
     }
 }
-
-//                    HStack {
-//                        Button(action: {}) {
-//                            Text("1")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("2")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("3")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//                    }.padding(.bottom, 10)
-//
-//                    HStack {
-//                        Button(action: {}) {
-//                            Text("4")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("5")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("6")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//                    }.padding(.bottom, 10)
-//
-//                    HStack {
-//                        Button(action: {}) {
-//                            Text("7")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("8")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("9")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//                    }.padding(.bottom, 10)
-//
-//                    HStack {
-//                        Button(action: {}) {
-//                            Text("*")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("0")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//
-//                        Button(action: {}) {
-//                            Text("#")
-//                                .font(.largeTitle)
-//                                .roundedBackground(.white)
-//                        }
-//                    }
