@@ -15,8 +15,7 @@ struct SurveyGridView: View {
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
     @State private var isNavigationActive = false
-    @State private var prompt = false
-    @State private var presentedSheet: ActiveSheet = .detail
+    @State private var modalPresented = false
     
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 3) }
@@ -36,15 +35,10 @@ struct SurveyGridView: View {
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: self.$prompt) {
-            if self.presentedSheet == .detail {
-                SurveyModalDetail(viewModel: factories.modalDetailViewModel()) {
-                    self.navigateTo()
-                }.environmentObject(self.rotationObserver)
-            } else {
-                //PinPromptView()
-                Text("Test")
-            }
+        .sheet(isPresented: self.$modalPresented) {
+            SurveyModalDetail(viewModel: factories.modalDetailViewModel()) {
+                self.navigateTo()
+            }.environmentObject(self.rotationObserver)
         }
     }
 
@@ -57,8 +51,7 @@ struct SurveyGridView: View {
                     Grid(self.viewModel.surveys) { survey in
                         Button(action: {
                             self.viewModel.select(survey: survey)
-                            self.presentedSheet = .detail
-                            self.prompt.toggle()
+                            self.modalPresented.toggle()
                         }) {
                             SurveyGridItemView(survey: survey)
                         }
@@ -84,11 +77,7 @@ struct SurveyGridView: View {
     }
     
     private func navigateTo() {
-        isNavigationActive = true
-    }
-    
-    private enum ActiveSheet {
-        case pin, detail
+        isNavigationActive.toggle()
     }
 }
 
