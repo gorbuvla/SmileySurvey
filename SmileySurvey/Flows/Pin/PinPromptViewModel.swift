@@ -89,26 +89,21 @@ class PinPromptViewModel: ObservableObject {
             pinDigit3 = digit; print("third")
         case (_, _, _, nil):
             pinDigit4 = digit; print("fourth")
-        default: digit
+        default: print("unmatched case")
         }
         
         guard let d1 = pinDigit1, let d2 = pinDigit2, let d3 = pinDigit3, let d4 = pinDigit4 else { return }
         
-        let pin = d1 + d2 + d3 + d4
+        let processPin = mode == .new ? addPin : validatePin
         
-        
-        if mode == .new {
-            addPin(pin: pin)
-        } else {
-            validatePin(pin: pin)
-        }
+        processPin(d1 + d2 + d3 + d4)
     }
     
     private func validatePin(pin: String) {
         if settings.pin == pin {
             continuationSubject.send(())
         } else {
-            error = "Pin not valid"
+            error = L10n.Pin.Error.invalid
         }
     }
     

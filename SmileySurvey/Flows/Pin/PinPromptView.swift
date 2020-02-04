@@ -35,6 +35,10 @@ struct PinPromptView: View {
                     
                     Spacer()
                     
+                    errorView
+                    
+                    Spacer()
+        
                     // dont think you are the only smart here..
                     // with view builders i cant generate rows and add views in forEach or similar way...
                     
@@ -69,6 +73,14 @@ struct PinPromptView: View {
     private var trailingNavItems: some View {
         Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
             Text(L10n.General.exit)
+        }
+    }
+    
+    private var errorView: AnyView {
+        if let error = viewModel.error {
+            return AnyView(Text(error).foregroundColor(.red))
+        } else {
+            return AnyView(EmptyView())
         }
     }
     

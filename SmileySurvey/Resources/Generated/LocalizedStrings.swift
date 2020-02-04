@@ -24,6 +24,13 @@ internal enum L10n {
     internal static let exit = L10n.tr("Localizable", "general.exit")
   }
 
+  internal enum Pin {
+    internal enum Error {
+      /// Invalid pin
+      internal static let invalid = L10n.tr("Localizable", "pin.error.invalid")
+    }
+  }
+
   internal enum Settings {
     /// Settings
     internal static let title = L10n.tr("Localizable", "settings.title")

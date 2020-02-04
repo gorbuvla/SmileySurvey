@@ -40,3 +40,7 @@
 "settings.general.title" = "General";
 "settings.general.pin.title" = "PIN";
 "settings.general.pin.empty" = "Not set";
+
+// Pin
+
+"pin.error.invalid" = "Invalid pin";
