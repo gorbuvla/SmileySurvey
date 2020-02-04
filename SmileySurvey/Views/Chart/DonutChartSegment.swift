@@ -44,6 +44,12 @@ struct DonutChartSegment: View {
     }
 }
 
+extension CGRect {
+    var center : CGPoint {
+        return CGPoint(x:self.midX, y:self.midY)
+    }
+}
+
 #if DEBUG
 struct DonutChartSegment_Previews: PreviewProvider {
     

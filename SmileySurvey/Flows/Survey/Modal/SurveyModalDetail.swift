@@ -84,7 +84,6 @@ struct SurveyModalDetail: View {
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
                 self.onStart()
-                
             }) {
                 HStack {
                     Image(systemName: "hand.thumbsup")
@@ -99,7 +98,7 @@ struct SurveyModalDetail: View {
             
             Button(action: { self.viewModel.delete() }) {
                 HStack {
-                    Image(systemName: "trash")
+                    Image.delete
                     
                     Text(L10n.Survey.Detail.delete)
                         .font(.title)

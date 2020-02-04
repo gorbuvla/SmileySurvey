@@ -14,10 +14,8 @@ struct SurveyGridView: View {
     @EnvironmentObject var rotationObserver: RotationObserver
     @ObservedObject var viewModel = factories.surveyGridViewModel()
     
-    @State private var showsAddNewSurvey: Bool = false
-    @State private var isPresented = false
-    @State private var showModal = false
     @State private var isNavigationActive = false
+    @State private var modalPresented = false
     
     private var tracksCount: Tracks {
         get { Tracks.count(rotationObserver.mode == Orientation.landscape ? 4 : 3) }
@@ -37,7 +35,7 @@ struct SurveyGridView: View {
         }
         .loading(isLoading: $viewModel.loading)
         .navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: self.$viewModel.showing) {
+        .sheet(isPresented: self.$modalPresented) {
             SurveyModalDetail(viewModel: factories.modalDetailViewModel()) {
                 self.navigateTo()
             }.environmentObject(self.rotationObserver)
@@ -51,7 +49,10 @@ struct SurveyGridView: View {
             } else {
                 return AnyView(
                     Grid(self.viewModel.surveys) { survey in
-                        Button(action: { self.viewModel.select(survey: survey) }) {
+                        Button(action: {
+                            self.viewModel.select(survey: survey)
+                            self.modalPresented.toggle()
+                        }) {
                             SurveyGridItemView(survey: survey)
                         }
                     }
@@ -63,14 +64,20 @@ struct SurveyGridView: View {
     
     private var trailingNavItem: some View {
         get {
-            NavigationLink(destination: SurveyFormView()) {
-                Image.new.font(.title)
+            HStack {
+                NavigationLink(destination: SurveyFormView()) {
+                    Image.new.font(.title)
+                }
+                
+                NavigationLink(destination: SettingsView(viewModel: factories.settingsViewModel())) {
+                    Image.settings.font(.title)
+                }
             }
         }
     }
     
     private func navigateTo() {
-        isNavigationActive = true
+        isNavigationActive.toggle()
     }
 }
 

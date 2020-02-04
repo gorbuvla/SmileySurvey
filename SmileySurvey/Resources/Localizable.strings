@@ -10,6 +10,7 @@
 // General
 
 "general.done" = "Done";
+"general.exit" = "Exit";
 
 // Main view, survey grid
 
@@ -32,3 +33,14 @@
 "survey.detail.start" = "Start";
 "survey.detail.delete" = "Delete";
 "survey.detail.percentage" = "%d %%";
+
+// Settings
+
+"settings.title" = "Settings";
+"settings.general.title" = "General";
+"settings.general.pin.title" = "PIN";
+"settings.general.pin.empty" = "Not set";
+
+// Pin
+
+"pin.error.invalid" = "Invalid pin";

@@ -25,11 +25,19 @@ final class ViewModelFactories {
     }
     
     var activeSurveyViewModel: () -> ActiveSurveyViewModel {
-        return { ActiveSurveyViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
+        return { ActiveSurveyViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository, settings: self.dependencies.userSettings) }
     }
     
     var modalDetailViewModel: () -> ModalDetailViewModel {
         return { ModalDetailViewModel(provider: self.dependencies.surveyStore, repository: self.dependencies.surveyRepository) }
+    }
+    
+    var settingsViewModel: () -> SettingsViewModel {
+        return { SettingsViewModel(repository: self.dependencies.userSettings) }
+    }
+    
+    var pinPromptViewModel: (PinPromptView.Mode) -> PinPromptViewModel {
+        return { mode in PinPromptViewModel(mode: mode, settings: self.dependencies.userSettings) }
     }
 }
 

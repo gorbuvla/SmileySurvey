@@ -12,6 +12,7 @@ protocol ModelProvider {
     
     var surveyRepository: SurveyRepositoring { get }
     var surveyStore: SurveyStore { get }
+    var userSettings: UserSettingsRepositoring { get }
 }
 
 final class ModelDependency: ModelProvider {
@@ -19,4 +20,5 @@ final class ModelDependency: ModelProvider {
     lazy var surveyRepository: SurveyRepositoring = CoreDataSurveyRepository(database: Database.shared)
     //lazy var surveyRepository: SurveyRepositoring = MockedSurveyRepository() // TODO: uncomment to debug with mocked data source
     lazy var surveyStore: SurveyStore = SurveyStore()
+    lazy var userSettings: UserSettingsRepositoring = UserSettingsRepository()
 }
