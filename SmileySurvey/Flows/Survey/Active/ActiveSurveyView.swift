@@ -31,11 +31,9 @@ struct ActiveSurveyView: View {
         .loading(isLoading: $viewModel.loading)
         .navigationBarBackButtonHidden(true) // We handle back navigation in our own way, user has to enter pin if provided
         .navigationBarTitle(Text(viewModel.survey.name), displayMode: .inline)
-        
         .navigationBarItems(trailing: trailingNavItems)
         .sheet(isPresented: $pinPresented) {
             PinPromptView(viewModel: factories.pinPromptViewModel(.verify)) {
-                //self.viewModel.onUpdated()
                 self.presentationMode.wrappedValue.dismiss()
             }
         }
@@ -43,7 +41,7 @@ struct ActiveSurveyView: View {
     
     private var trailingNavItems: some View {
         Button(action: { self.exitSurvey() }) {
-            Text("Exit")
+            Text(L10n.General.exit)
         }
     }
     

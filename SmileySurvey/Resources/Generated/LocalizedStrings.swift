@@ -20,6 +20,8 @@ internal enum L10n {
   internal enum General {
     /// Done
     internal static let done = L10n.tr("Localizable", "general.done")
+    /// Exit
+    internal static let exit = L10n.tr("Localizable", "general.exit")
   }
 
   internal enum Settings {

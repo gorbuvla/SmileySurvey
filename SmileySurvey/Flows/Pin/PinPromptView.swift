@@ -26,7 +26,6 @@ struct PinPromptView: View {
                 VStack {
                     Spacer()
                     
-                    
                     HStack {
                         Text(self.viewModel.digit1 ?? "_").pinDigitStyle()
                         Text(self.viewModel.digit2 ?? "_").pinDigitStyle()
@@ -52,8 +51,7 @@ struct PinPromptView: View {
                         .padding(.bottom, 10)
                     
                     Spacer()
-                }.navigationBarItems(trailing: Button(action: { self.presentationMode.wrappedValue.dismiss() }) { Text("Exit") })
-                
+                }.navigationBarItems(trailing: trailingNavItems)
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -65,6 +63,12 @@ struct PinPromptView: View {
         .onReceive(viewModel.completion) {
             self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
+        }
+    }
+    
+    private var trailingNavItems: some View {
+        Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+            Text(L10n.General.exit)
         }
     }
     

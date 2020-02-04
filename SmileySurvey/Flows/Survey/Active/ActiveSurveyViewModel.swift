@@ -20,7 +20,7 @@ class ActiveSurveyViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     var shouldCheckPin: Bool {
-        get { settings.pin != nil }
+        get { !settings.pin.isEmpty }
     }
     
     init(provider: CurrentSurveyProvider, repository: SurveyRepositoring, settings: UserSettingsRepositoring) {
@@ -45,7 +45,6 @@ class ActiveSurveyViewModel: ObservableObject {
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .delay(for: 2.0, scheduler: DispatchQueue.main)
         .sink { [weak self] survey in
             self?.survey = survey
             self?.loading = false

@@ -10,6 +10,7 @@
 // General
 
 "general.done" = "Done";
+"general.exit" = "Exit";
 
 // Main view, survey grid
 
