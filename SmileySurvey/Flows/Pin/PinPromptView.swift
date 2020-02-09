@@ -15,6 +15,8 @@ struct PinPromptView: View {
     @ObservedObject var viewModel: PinPromptViewModel
     let onSuccess: () -> ()
     
+    @State var attempts = 0
+    
     var body: some View {
         NavigationView {
             ZStack(alignment: .init(horizontal: .center, vertical: .center)) {
@@ -68,6 +70,12 @@ struct PinPromptView: View {
             self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
         }
+//        .onReceive(viewModel.shake) {
+//            withAnimation(.default) {
+//                self.attempts += 1
+//            }
+//        }
+        //.modifier(Shake(animatableData: CGFloat(attempts)))
     }
     
     private var trailingNavItems: some View {

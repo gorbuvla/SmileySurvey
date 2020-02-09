@@ -63,6 +63,10 @@ class PinPromptViewModel: ObservableObject {
         get { continuationSubject.eraseToAnyPublisher() }
     }
     
+    var shake: AnyPublisher<(), Never> {
+        get { $error.compactMap { $0 }.eraseToAnyPublisher() }
+    }
+    
     @Published var error: String? = nil {
         didSet {
             guard let _ = error else { return }

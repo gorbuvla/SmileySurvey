@@ -32,6 +32,7 @@
 		C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */; };
 		C2246A232392D0D5008C3C60 /* ModelDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A222392D0D5008C3C60 /* ModelDependency.swift */; };
 		C2246A252392D126008C3C60 /* ViewModelFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2246A242392D126008C3C60 /* ViewModelFactories.swift */; };
+		C25127B623F024DA00629660 /* ShakeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25127B523F024DA00629660 /* ShakeModifier.swift */; };
 		C26D447B23D35BDF00E7E268 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26D447A23D35BDF00E7E268 /* Action.swift */; };
 		C289F0FF23E35522000B11E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289F0FE23E35522000B11E9 /* SettingsView.swift */; };
 		C289F10123E35532000B11E9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289F10023E35532000B11E9 /* SettingsViewModel.swift */; };
@@ -96,6 +97,7 @@
 		C2246A1D2392C97A008C3C60 /* SurveyModalDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyModalDetail.swift; sourceTree = "<group>"; };
 		C2246A222392D0D5008C3C60 /* ModelDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependency.swift; sourceTree = "<group>"; };
 		C2246A242392D126008C3C60 /* ViewModelFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactories.swift; sourceTree = "<group>"; };
+		C25127B523F024DA00629660 /* ShakeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeModifier.swift; sourceTree = "<group>"; };
 		C26D447A23D35BDF00E7E268 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		C289F0FE23E35522000B11E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C289F10023E35532000B11E9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		C207E0612380976A00F59D1A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C25127B423F024C700629660 /* Animations */,
 				C2A3E0E923B4F5E30007A140 /* ViewExtensions */,
 				C2E362DA239EF92F00AC9913 /* FormTextField */,
 				C21D3D87239299B100D1B220 /* ActivityIndicator */,
@@ -318,6 +321,14 @@
 				C21738C123DCE7F90003D26C /* RatingItemView.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		C25127B423F024C700629660 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C25127B523F024DA00629660 /* ShakeModifier.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		C289F0FD23E35509000B11E9 /* Settings */ = {
@@ -573,6 +584,7 @@
 				C207E0662380A31C00F59D1A /* DonutChart.swift in Sources */,
 				C206D7DE23788ABC007D59D3 /* LocalSurveyRepository.swift in Sources */,
 				C2A3E0E623B3D8C50007A140 /* RotationObserver.swift in Sources */,
+				C25127B623F024DA00629660 /* ShakeModifier.swift in Sources */,
 				C206D7AA237888BE007D59D3 /* AppDelegate.swift in Sources */,
 				C2246A1E2392C97A008C3C60 /* SurveyModalDetail.swift in Sources */,
 				C2E362DC239EF94F00AC9913 /* FormTextFieldView.swift in Sources */,
