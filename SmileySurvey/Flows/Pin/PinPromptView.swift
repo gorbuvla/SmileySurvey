@@ -11,11 +11,10 @@ import SwiftUI
 struct PinPromptView: View {
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
-    
     @ObservedObject var viewModel: PinPromptViewModel
-    let onSuccess: () -> ()
+    @State var attempts: Int = 0
     
-    @State var attempts = 0
+    let onSuccess: () -> ()
     
     var body: some View {
         NavigationView {
@@ -24,6 +23,7 @@ struct PinPromptView: View {
                     .foregroundColor(Color.blue.opacity(0.1))
                     .background(Color.white)
                     .edgesIgnoringSafeArea(.all) // a hack to draw under navbar
+                    .modifier(Shake(animatableData: CGFloat(attempts)))
                 
                 VStack {
                     Spacer()
@@ -34,6 +34,7 @@ struct PinPromptView: View {
                         Text(self.viewModel.digit3 ?? "_").pinDigitStyle()
                         Text(self.viewModel.digit4 ?? "_").pinDigitStyle()
                     }.padding(.bottom, 10)
+                        
                     
                     Spacer()
                     
@@ -70,16 +71,22 @@ struct PinPromptView: View {
             self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
         }
-//        .onReceive(viewModel.shake) {
-//            withAnimation(.default) {
-//                self.attempts += 1
-//            }
-//        }
-        //.modifier(Shake(animatableData: CGFloat(attempts)))
+        .onReceive(viewModel.shake) {
+            //withAnimation(.default) {
+                self.attempts += 1
+            //}
+        }
     }
     
     private var trailingNavItems: some View {
-        Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            
+            withAnimation(.default) {
+                self.attempts += 1
+            }
+            
+        }) {
             Text(L10n.General.exit)
         }
     }

@@ -33,6 +33,7 @@ struct ActiveSurveyView: View {
         .navigationBarTitle(Text(viewModel.survey.name), displayMode: .inline)
         .navigationBarItems(trailing: trailingNavItems)
         .sheet(isPresented: $pinPresented) {
+//            Text("Test")
             PinPromptView(viewModel: factories.pinPromptViewModel(.verify)) {
                 self.presentationMode.wrappedValue.dismiss()
             }

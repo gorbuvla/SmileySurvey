@@ -30,9 +30,10 @@ struct SettingsView: View {
         }
         .navigationBarTitle(L10n.Settings.title)
         .sheet(isPresented: $presented) {
-            PinPromptView(viewModel: factories.pinPromptViewModel(.new)) {
-                self.viewModel.onUpdated()
-            }
+            Text("Test")
+//            PinPromptView(viewModel: factories.pinPromptViewModel(.new)) {
+//                self.viewModel.onUpdated()
+//            }
         }
     }
     
