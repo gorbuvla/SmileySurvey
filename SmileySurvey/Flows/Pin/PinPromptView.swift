@@ -11,8 +11,9 @@ import SwiftUI
 struct PinPromptView: View {
     
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
-    
     @ObservedObject var viewModel: PinPromptViewModel
+    @State var attempts: Int = 0
+    
     let onSuccess: () -> ()
     
     var body: some View {
@@ -32,7 +33,7 @@ struct PinPromptView: View {
                         Text(self.viewModel.digit3 ?? "_").pinDigitStyle()
                         Text(self.viewModel.digit4 ?? "_").pinDigitStyle()
                     }.padding(.bottom, 10)
-                    
+                        
                     Spacer()
                     
                     errorView
@@ -63,15 +64,23 @@ struct PinPromptView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
+        .modifier(Shake(animatableData: CGFloat(attempts)))
         .fullSpace()
         .onReceive(viewModel.completion) {
             self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
         }
+        .onReceive(viewModel.shake) {
+            withAnimation(.default) {
+                self.attempts += 1
+            }
+        }
     }
     
     private var trailingNavItems: some View {
-        Button(action: { self.presentationMode.wrappedValue.dismiss() }) {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
             Text(L10n.General.exit)
         }
     }

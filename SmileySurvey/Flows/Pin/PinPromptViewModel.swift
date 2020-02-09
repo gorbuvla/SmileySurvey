@@ -13,6 +13,7 @@ class PinPromptViewModel: ObservableObject {
     
     private let settings: UserSettingsRepositoring
     private let continuationSubject = PassthroughSubject<(), Never>()
+    private let shakeSubject = PassthroughSubject<(), Never>()
     let mode: PinPromptView.Mode
     
     private var pinDigit1: String? = nil {
@@ -63,6 +64,10 @@ class PinPromptViewModel: ObservableObject {
         get { continuationSubject.eraseToAnyPublisher() }
     }
     
+    var shake: AnyPublisher<(), Never> {
+        get { shakeSubject.eraseToAnyPublisher() }
+    }
+    
     @Published var error: String? = nil {
         didSet {
             guard let _ = error else { return }
@@ -71,6 +76,8 @@ class PinPromptViewModel: ObservableObject {
             pinDigit2 = nil
             pinDigit3 = nil
             pinDigit4 = nil
+            
+            shakeSubject.send(())
         }
     }
 
