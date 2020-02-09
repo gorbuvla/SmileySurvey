@@ -23,7 +23,6 @@ struct PinPromptView: View {
                     .foregroundColor(Color.blue.opacity(0.1))
                     .background(Color.white)
                     .edgesIgnoringSafeArea(.all) // a hack to draw under navbar
-                    .modifier(Shake(animatableData: CGFloat(attempts)))
                 
                 VStack {
                     Spacer()
@@ -35,7 +34,6 @@ struct PinPromptView: View {
                         Text(self.viewModel.digit4 ?? "_").pinDigitStyle()
                     }.padding(.bottom, 10)
                         
-                    
                     Spacer()
                     
                     errorView
@@ -66,26 +64,22 @@ struct PinPromptView: View {
             RoundedRectangle(cornerRadius: 10)
                 .strokeBorder(Color.random.opacity(0.3), lineWidth: 4)
         )
+        .modifier(Shake(animatableData: CGFloat(attempts)))
         .fullSpace()
         .onReceive(viewModel.completion) {
             self.presentationMode.wrappedValue.dismiss()
             self.onSuccess()
         }
         .onReceive(viewModel.shake) {
-            //withAnimation(.default) {
+            withAnimation(.default) {
                 self.attempts += 1
-            //}
+            }
         }
     }
     
     private var trailingNavItems: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
-            
-            withAnimation(.default) {
-                self.attempts += 1
-            }
-            
         }) {
             Text(L10n.General.exit)
         }
